@@ -1,21 +1,25 @@
 import React from "react";
-import { FaLinkedin, FaGithub, FaTwitter } from "react-icons/fa"; // Tu peux installer react-icons si tu ne l'as pas
 
 function Footer() {
   return (
-    <footer className="bg-gray-900 text-white py-6">
-      <div className="text-center">
-        <p>&copy; {new Date().getFullYear()} Mon Portfolio. Tous droits réservés.</p>
-        <div className="flex justify-center space-x-4 mt-4">
-          <a href="https://www.linkedin.com" className="hover:text-indigo-400">
-            <FaLinkedin size={24} />
-          </a>
-          <a href="https://github.com" className="hover:text-indigo-400">
-            <FaGithub size={24} />
-          </a>
-          <a href="https://twitter.com" className="hover:text-indigo-400">
-            <FaTwitter size={24} />
-          </a>
+    <footer className="bg-gray-800 text-white py-6">
+      <div className="container mx-auto flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+        {/* Coordonnées de contact */}
+        <div>
+          <h3 className="text-lg font-semibold">Contactez-moi :</h3>
+          <p>Email : <a href="mailto:colinguillaume641@yahoo.fr" className="text-indigo-400 hover:text-indigo-600">colinguillaume641@yahoo.fr</a></p>
+          <p>Téléphone : <a href="tel:+33666742480" className="text-indigo-400 hover:text-indigo-600">+33 6 66 74 24 80</a></p>
+        </div>
+
+        {/* Liens sociaux */}
+        <div className="flex space-x-6">
+          <a href="https://www.linkedin.com/in/guillaumecolin/" target="_blank" rel="noopener noreferrer" className="hover:text-indigo-400">LinkedIn</a>
+          <a href="https://github.com/Bledichef" target="_blank" rel="noopener noreferrer" className="hover:text-indigo-400">GitHub</a>
+        </div>
+
+        {/* Copyright */}
+        <div>
+          <p className="text-sm text-gray-400">&copy; {new Date().getFullYear()} GC Consulting. Tous droits réservés.</p>
         </div>
       </div>
     </footer>

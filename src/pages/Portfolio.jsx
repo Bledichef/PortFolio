@@ -8,7 +8,7 @@ import LevillageImage from '../assets/LeVillageCapture.png';
 function Portfolio() {
   const controls = useAnimation();
   const { ref, inView } = useInView({
-    threshold: 0.2, // L'animation se déclenche lorsque 20% de l'élément est visible
+    threshold: 0.2,
   });
 
   useEffect(() => {
@@ -17,7 +17,6 @@ function Portfolio() {
     }
   }, [controls, inView]);
 
-  // Variants pour le container global
   const container = {
     hidden: { opacity: 0, scale: 0.9 },
     visible: {
@@ -25,15 +24,14 @@ function Portfolio() {
       scale: 1,
       transition: {
         delayChildren: 0.2,
-        staggerChildren: 0.3, // Décalage progressif entre les éléments
+        staggerChildren: 0.3,
         ease: "easeInOut",
       },
     },
   };
 
-  // Variants pour chaque projet avec animation multi-étapes
   const item = {
-    hidden: { opacity: 0, y: 50, rotate: -2, scale: 0.9 }, // Entrée plus douce
+    hidden: { opacity: 0, y: 50, rotate: -2, scale: 0.9 },
     visible: {
       opacity: 1,
       y: 0,
@@ -41,9 +39,9 @@ function Portfolio() {
       scale: 1,
       transition: {
         type: "spring",
-        stiffness: 60, // Adoucit le mouvement avec effet "spring"
+        stiffness: 60,
         damping: 10,
-        duration: 0.8, // Durée plus longue pour plus de fluidité
+        duration: 0.8,
         ease: "easeOut",
       },
     },
@@ -54,11 +52,11 @@ function Portfolio() {
         title: "Cv Analyzer", 
         description: "Cv Analyzer est une application innovante qui utilise l'intelligence artificielle pour analyser et améliorer les CV. En quelques secondes, elle génère des recommandations personnalisées pour augmenter les chances de succès des candidats.", 
         imgSrc: CvAnalyseImage,
-        url: "https://www.cv-analyse.fr"  // URL du projet Cv Analyzer
+        url: "https://www.cv-analyse.fr" 
     },
     {
         title: "Le Village",
-        description: "Le Village est un site vitrine conçu pour le restaurant Le Village, situé à Guyancourt. Ce site présente le menu, les événements spéciaux, et permet aux clients de découvrir l'atmosphère chaleureuse du restaurant. Grâce à un design élégant et moderne, le site offre une navigation fluide et un accès rapide aux informations importantes, telles que les horaires d'ouverture, les coordonnées et les dernières actualités.",
+        description: "Le Village est un site vitrine conçu pour le restaurant Le Village, situé à Guyancourt. Ce site présente le menu, les événements spéciaux, et permet aux clients de découvrir l'atmosphère chaleureuse du restaurant.",
         imgSrc: LevillageImage,
         url: "https://le-village-bay.vercel.app/"
       },
@@ -67,46 +65,67 @@ function Portfolio() {
         title: "Projet 3", 
         description: "Description du projet 3", 
         imgSrc: "image3.jpg", 
-        url: "#"  // Ajoute l'URL ici si nécessaire
+        url: "#"
     },
   ];
 
   return (
-    <motion.div
-      className="bg-gradient-to-r from-gray-100 to-gray-300 py-12 px-6 min-h-screen"
-      ref={ref}
-      initial="hidden"
-      animate={controls}
-      variants={container} // Variantes appliquées au container global
-    >
-      <h2 className="text-4xl font-bold text-center mb-8">Mes Projets</h2>
+    <div className="bg-gray-900 text-white h-full min-h-screen flex flex-col justify-center items-center relative overflow-hidden">
+      {/* Effet d'arrière-plan avec des formes flottantes */}
       <motion.div
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto"
+        className="absolute w-96 h-96 bg-indigo-700 rounded-full top-10 left-10 opacity-30"
+        animate={{ scale: [1, 1.2, 1], rotate: [0, 360, 0] }}
+        transition={{ duration: 10, repeat: Infinity }}
+      ></motion.div>
+      <motion.div
+        className="absolute w-72 h-72 bg-indigo-600 rounded-full bottom-10 right-10 opacity-30"
+        animate={{ scale: [1, 1.2, 1], rotate: [0, -360, 0] }}
+        transition={{ duration: 12, repeat: Infinity }}
+      ></motion.div>
+
+      {/* Titre de la section */}
+      <motion.h2
+        className="text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-600 mb-12 z-10 font-poppins tracking-wide"
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+        style={{ lineHeight: 'normal' }} 
+      >
+        Mes Projets
+      </motion.h2>
+
+      {/* Contenu de la section */}
+      <motion.div
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto z-10"
+        ref={ref}
+        initial="hidden"
+        animate={controls}
+        variants={container}
       >
         {projects.map((project, index) => (
           <motion.div
             key={index}
-            className="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform"
-            variants={item} // Variantes appliquées à chaque projet
-            whileHover={{ scale: 1.05, rotate: 2 }} // Ajout d’un effet de légère rotation et zoom au survol
+            className="bg-gray-800 text-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform"
+            variants={item}
+            whileHover={{ scale: 1.05, rotate: 2 }}
           >
             <motion.img
               src={project.imgSrc}
               alt={project.title}
-              className="w-full h-64 object-cover"
-              initial={{ scale: 1.2, opacity: 0.8 }} // L'image commence en léger zoom et devient plus nette
+              className="w-full h-64 object-cover opacity-90 hover:opacity-100 transition-opacity"
+              initial={{ scale: 1.2, opacity: 0.8 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.7, ease: "easeInOut" }}
-              whileHover={{ scale: 1.08 }} // Ajout d’un zoom doux au survol
+              whileHover={{ scale: 1.08 }}
             />
             <div className="p-6">
               <h3 className="text-2xl font-semibold mb-2">{project.title}</h3>
-              <p className="text-gray-600">{project.description}</p>
+              <p className="text-gray-300">{project.description}</p>
               <a 
-                href={project.url} // L'URL du projet est utilisée ici
-                className="text-indigo-600 hover:underline mt-4 block"
-                target="_blank" // Ouvre dans un nouvel onglet
-                rel="noopener noreferrer" // Sécurise l'ouverture de l'URL
+                href={project.url}
+                className="text-indigo-400 hover:text-indigo-500 hover:underline mt-4 block"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 Voir plus
               </a>
@@ -114,7 +133,7 @@ function Portfolio() {
           </motion.div>
         ))}
       </motion.div>
-    </motion.div>
+    </div>
   );
 }
 
