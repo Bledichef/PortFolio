@@ -71,13 +71,13 @@ function About() {
         <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <li className="text-lg text-gray-300 flex items-center">
             <span className="bg-indigo-200 text-indigo-800 px-3 py-2 rounded-lg font-semibold mr-2 shadow-sm flex items-center">
-              <FontAwesomeIcon icon={faServer} className="mr-2 text-indigo-600" /> Back-end :
+              <FontAwesomeIcon icon={faServer} className="mr-2 text-indigo-600" /> Back-end:
             </span>
             Node.js, Sequelize
           </li>
           <li className="text-lg text-gray-300 flex items-center">
             <span className="bg-indigo-200 text-indigo-800 px-3 py-2 rounded-lg font-semibold mr-2 shadow-sm flex items-center">
-              <FontAwesomeIcon icon={faLaptopCode} className="mr-2 text-indigo-600" /> Front-end :
+              <FontAwesomeIcon icon={faLaptopCode} className="mr-2 text-indigo-600" /> Front-end:
             </span>
             React, CSS, Sass, Tailwind
           </li>
@@ -89,19 +89,19 @@ function About() {
           </li>
           <li className="text-lg text-gray-300 flex items-center">
             <span className="bg-indigo-200 text-indigo-800 px-3 py-2 rounded-lg font-semibold mr-2 shadow-sm flex items-center">
-              <FontAwesomeIcon icon={faCreditCard} className="mr-2 text-indigo-600" /> API & Paiements :
+              <FontAwesomeIcon icon={faCreditCard} className="mr-2 text-indigo-600" /> API & Paiements:
             </span>
             Stripe, OpenAI, Brevo, Mailchimp
           </li>
           <li className="text-lg text-gray-300 flex items-center">
             <span className="bg-indigo-200 text-indigo-800 px-3 py-2 rounded-lg font-semibold mr-2 shadow-sm flex items-center">
-              <FontAwesomeIcon icon={faLock} className="mr-2 text-indigo-600" /> Authentification :
+              <FontAwesomeIcon icon={faLock} className="mr-2 text-indigo-600" /> Authentification:
             </span>
             MSAL, Azure AD
           </li>
           <li className="text-lg text-gray-300 flex items-center">
             <span className="bg-indigo-200 text-indigo-800 px-3 py-2 rounded-lg font-semibold mr-2 shadow-sm flex items-center">
-              <FontAwesomeIcon icon={faToolbox} className="mr-2 text-indigo-600" /> Outils :
+              <FontAwesomeIcon icon={faToolbox} className="mr-2 text-indigo-600" /> Outils:
             </span>
             GitHub, DevOps, Azure, Postman
           </li>
