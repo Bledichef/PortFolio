@@ -17,9 +17,9 @@ function Home() {
         transition={{ duration: 12, repeat: Infinity }}
       ></motion.div>
 
-      {/* Texte principal avec animation type machine à écrire */}
-      <motion.h1
-        className="text-4xl md:text-6xl font-extrabold mb-4 z-10 text-center"
+      {/* Conteneur principal du texte */}
+      <motion.div
+        className="text-4xl md:text-6xl font-extrabold mb-4 z-10 text-center w-full max-w-xs md:max-w-lg"
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
@@ -32,7 +32,7 @@ function Home() {
           typeSpeed={70}
           deleteSpeed={50}
         />
-      </motion.h1>
+      </motion.div>
 
       {/* Sous-texte avec animation */}
       <motion.p
