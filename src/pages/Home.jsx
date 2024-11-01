@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Typewriter } from 'react-simple-typewriter';
 
 function Home() {
+  // Utilisation d'un state pour forcer un re-render
+  const [key, setKey] = useState(0);
+
+  useEffect(() => {
+    setKey(prevKey => prevKey + 1);
+  }, []);
+
   return (
     <div className="bg-gray-900 text-white h-screen flex flex-col justify-center items-center relative overflow-hidden p-4">
       {/* Effet d'arrière-plan avec des formes flottantes */}
@@ -17,9 +24,10 @@ function Home() {
         transition={{ duration: 12, repeat: Infinity }}
       ></motion.div>
 
-      {/* Conteneur principal du texte */}
+      {/* Conteneur principal du texte avec une clé pour forcer le re-render */}
       <motion.div
-        className="text-3xl md:text-6xl font-extrabold mb-4 z-10 text-center w-full max-w-xs md:max-w-lg leading-tight"
+        key={key} // Force le re-render en changeant la clé
+        className="text-3xl md:text-6xl font-extrabold mb-4 z-10 text-center w-full max-w-xs md:max-w-lg leading-tight whitespace-nowrap"
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
