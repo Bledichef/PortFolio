@@ -63,7 +63,7 @@ function Portfolio() {
     { 
         title: "OKRDV", 
         description: "OKRDV est un outil de gestion de planning professionnel qui permet aux professionnels de créer et générer une page en ligne pour la prise de réservation et la gestion de planning. Une fois qu'un client prend un rendez-vous, le professionnel peut l'accepter ou le refuser. Une fois validé, un email automatique est envoyé avec un fichier ICS pour intégrer le RDV dans tous les gestionnaires de planning.", 
-        imgSrc: "https://image.thum.io/get/width/1200/https://www.okrdv.eu/", 
+        imgSrc: "https://mini.s-shot.ru/1200x800/PNG/1200/Z100/?https://www.okrdv.eu", 
         url: "https://www.okrdv.eu/"
     },
   ];
