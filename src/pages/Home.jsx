@@ -49,17 +49,18 @@ function Home() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          <motion.a
-            href="/portfolio"
-            className="px-8 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300 font-semibold text-lg"
-            whileHover={{ scale: 1.05, y: -2 }}
-            whileTap={{ scale: 0.95 }}
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
-          >
-            Voir mes créations
-          </motion.a>
+                 <motion.a
+                   href="/portfolio"
+                   className="px-8 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300 font-semibold text-lg"
+                   whileHover={{ scale: 1.05, y: -2 }}
+                   whileTap={{ scale: 0.95 }}
+                   initial={{ opacity: 0, x: -20 }}
+                   animate={{ opacity: 1, x: 0 }}
+                   transition={{ duration: 0.6, delay: 0.5 }}
+                   title="Découvrez mes créations web - Sites vitrines, e-commerce et applications"
+                 >
+                   Voir mes créations
+                 </motion.a>
           <motion.a
             href="/services"
             className="px-8 py-4 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition duration-300 font-semibold text-lg"

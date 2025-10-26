@@ -139,10 +139,10 @@ function Portfolio() {
           >
             {/* Image avec overlay */}
             <div className="relative overflow-hidden">
-              <motion.img
-                src={project.imgSrc}
-                alt={project.title}
-                className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+                       <motion.img
+                         src={project.imgSrc}
+                         alt={`Capture d'écran du projet ${project.title} - ${project.description.substring(0, 100)}...`}
+                         className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.7, ease: "easeInOut" }}

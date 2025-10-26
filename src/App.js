@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Portfolio from "./pages/Portfolio";
 import Services from "./pages/Services";
+import FAQ from "./pages/FAQ";
 
 function App() {
   return (
@@ -13,12 +14,13 @@ function App() {
       <div className="flex flex-col min-h-screen">
         <Header />
         <main className="flex-grow bg-slate-900"> 
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/portfolio" element={<Portfolio />} />
-            <Route path="/services" element={<Services />} />
-          </Routes>
+                <Routes>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/about" element={<About />} />
+                  <Route path="/portfolio" element={<Portfolio />} />
+                  <Route path="/services" element={<Services />} />
+                  <Route path="/faq" element={<FAQ />} />
+                </Routes>
         </main>
         <Footer />
       </div>

@@ -37,10 +37,13 @@ function Header() {
             <li>
               <Link to="/services" className="hover:text-blue-400 transition-colors duration-200">Services</Link>
             </li>
-            <li>
-                  <Link to="/portfolio" className="hover:text-blue-400 transition-colors duration-200">Quelques Créations</Link>
-            </li>
-          </ul>
+                  <li>
+                    <Link to="/portfolio" className="hover:text-blue-400 transition-colors duration-200">Quelques Créations</Link>
+                  </li>
+                  <li>
+                    <Link to="/faq" className="hover:text-blue-400 transition-colors duration-200">FAQ</Link>
+                  </li>
+                </ul>
         </nav>
 
         {/* Bouton Hamburger Mobile */}
@@ -85,7 +88,7 @@ function Header() {
               Services
             </Link>
           </li>
-          <li>
+                <li>
                   <Link
                     to="/portfolio"
                     className="block py-2 hover:text-blue-400 transition-colors duration-200"
@@ -93,8 +96,17 @@ function Header() {
                   >
                     Quelques Créations
                   </Link>
-          </li>
-        </ul>
+                </li>
+                <li>
+                  <Link
+                    to="/faq"
+                    className="block py-2 hover:text-blue-400 transition-colors duration-200"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    FAQ
+                  </Link>
+                </li>
+              </ul>
       </nav>
     </header>
   );
