@@ -54,56 +54,56 @@ function About() {
         ref={ref}
       >
         <p className="text-xl font-semibold mb-6 text-white">
-          Développeur Web Full-Stack | React | Node.js | DevOps
+          Créateur de sites web professionnels | Spécialiste en solutions digitales
         </p>
         <p className="text-lg mb-4 text-gray-300 leading-relaxed">
-          Fort d'une solide expérience dans le développement web, j'ai acquis une expertise solide dans la gestion complète des projets, de la réflexion à la mise en production. Je maîtrise aussi bien le back-end en Node.js avec Sequelize pour les bases de données, que le front-end en React, en gérant le style avec CSS, Sass, et Tailwind.
+          Avec plusieurs années d'expérience dans la création de sites web, je vous accompagne de A à Z dans vos projets digitaux. De l'idée initiale à la mise en ligne, je m'occupe de tout : design, développement, hébergement et maintenance. Mon objectif ? Créer des sites qui fonctionnent parfaitement et qui vous font gagner des clients.
         </p>
         <p className="text-lg mb-4 text-gray-300 leading-relaxed">
-          Mon parcours m'a amené à travailler avec Azure, notamment sur la gestion des repositories DevOps, la mise en place de pipelines CI/CD pour le déploiement sur des App Services, ainsi que la gestion des tâches et tickets. J'ai également une expérience en intégration de paiements avec Stripe, la gestion d’échanges de données entre le back-end et des APIs d’intelligence artificielle telles qu'OpenAI, ainsi que l’implémentation de la gestion des utilisateurs avec MSAL, en lien direct avec un tenant.
+          J'ai développé des solutions variées : des sites vitrines pour restaurants, des outils d'intelligence artificielle pour l'analyse de CV, et des systèmes de gestion de rendez-vous. Chaque projet est unique et adapté aux besoins spécifiques de mes clients. Je maîtrise les paiements en ligne, l'intégration d'outils d'IA, et la création d'interfaces intuitives.
         </p>
         <p className="text-lg mb-6 text-gray-300 leading-relaxed">
-          Toujours curieux et passionné par l’apprentissage de nouveaux outils et technologies, j'aime explorer de nouvelles solutions pour améliorer mes compétences et mes projets.
+          Passionné par l'innovation et toujours à l'affût des dernières tendances web, je m'engage à vous livrer des solutions modernes et performantes. Votre réussite est ma priorité, et je mets tout en œuvre pour créer des sites qui dépassent vos attentes.
         </p>
 
         {/* Compétences clés */}
-        <p className="text-2xl font-bold mb-4 text-white">Compétences clés :</p>
+        <p className="text-2xl font-bold mb-4 text-white">Mes domaines d'expertise :</p>
         <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <li className="text-lg text-gray-300 flex items-center">
             <span className="bg-indigo-200 text-indigo-800 px-3 py-2 rounded-lg font-semibold mr-2 shadow-sm flex items-center">
-              <FontAwesomeIcon icon={faServer} className="mr-2 text-indigo-600" /> Back-end:
+              <FontAwesomeIcon icon={faLaptopCode} className="mr-2 text-indigo-600" /> Sites web modernes:
             </span>
-            Node.js, Sequelize
+            Design responsive, interfaces intuitives
           </li>
           <li className="text-lg text-gray-300 flex items-center">
             <span className="bg-indigo-200 text-indigo-800 px-3 py-2 rounded-lg font-semibold mr-2 shadow-sm flex items-center">
-              <FontAwesomeIcon icon={faLaptopCode} className="mr-2 text-indigo-600" /> Front-end:
+              <FontAwesomeIcon icon={faServer} className="mr-2 text-indigo-600" /> Applications sur mesure:
             </span>
-            React, CSS, Sass, Tailwind
+            Systèmes de gestion, outils métier
           </li>
           <li className="text-lg text-gray-300 flex items-center">
             <span className="bg-indigo-200 text-indigo-800 px-3 py-2 rounded-lg font-semibold mr-2 shadow-sm flex items-center">
-              <FontAwesomeIcon icon={faCloud} className="mr-2 text-indigo-600" /> DevOps:
+              <FontAwesomeIcon icon={faCloud} className="mr-2 text-indigo-600" /> Hébergement & maintenance:
             </span>
-            Azure, App Services, Pipelines CI/CD
+            Mise en ligne, suivi, mises à jour
           </li>
           <li className="text-lg text-gray-300 flex items-center">
             <span className="bg-indigo-200 text-indigo-800 px-3 py-2 rounded-lg font-semibold mr-2 shadow-sm flex items-center">
-              <FontAwesomeIcon icon={faCreditCard} className="mr-2 text-indigo-600" /> API & Paiements:
+              <FontAwesomeIcon icon={faCreditCard} className="mr-2 text-indigo-600" /> Paiements en ligne:
             </span>
-            Stripe, OpenAI, Brevo, Mailchimp
+            Boutiques e-commerce, systèmes de facturation
           </li>
           <li className="text-lg text-gray-300 flex items-center">
             <span className="bg-indigo-200 text-indigo-800 px-3 py-2 rounded-lg font-semibold mr-2 shadow-sm flex items-center">
-              <FontAwesomeIcon icon={faLock} className="mr-2 text-indigo-600" /> Authentification:
+              <FontAwesomeIcon icon={faLock} className="mr-2 text-indigo-600" /> Sécurité & confidentialité:
             </span>
-            MSAL, Azure AD
+            Protection des données, authentification
           </li>
           <li className="text-lg text-gray-300 flex items-center">
             <span className="bg-indigo-200 text-indigo-800 px-3 py-2 rounded-lg font-semibold mr-2 shadow-sm flex items-center">
-              <FontAwesomeIcon icon={faToolbox} className="mr-2 text-indigo-600" /> Outils:
+              <FontAwesomeIcon icon={faToolbox} className="mr-2 text-indigo-600" /> Intégrations avancées:
             </span>
-            GitHub, DevOps, Azure, Postman
+            IA, APIs externes, automatisation
           </li>
         </ul>
       </motion.div>

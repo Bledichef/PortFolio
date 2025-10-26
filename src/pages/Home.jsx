@@ -33,7 +33,7 @@ function Home() {
         transition={{ duration: 1 }}
       >
         <Typewriter
-          words={['Je suis Guillaume C']}
+          words={['Je crée votre site web sur mesure']}
           loop={false}
           cursor
           cursorStyle='_'
@@ -49,7 +49,7 @@ function Home() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.5 }}
       >
-        Développeur Web Freelance - Spécialiste React & Tailwind CSS
+        Développeur Web Freelance - Sites modernes et applications sur mesure
       </motion.p>
 
       {/* Bouton avec animation */}
@@ -59,7 +59,7 @@ function Home() {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
       >
-        Découvrir mes projets
+        Voir mes réalisations
       </motion.a>
 
       {/* Section supplémentaire : compétences */}
@@ -69,11 +69,11 @@ function Home() {
         animate={{ opacity: 1 }}
         transition={{ duration: 1.5, delay: 1 }}
       >
-        <p className="text-sm md:text-lg font-semibold mb-4">Compétences principales :</p>
+        <p className="text-sm md:text-lg font-semibold mb-4">Ce que je peux créer pour vous :</p>
         <ul className="flex flex-wrap justify-center gap-2 md:gap-4">
-          {['React', 'Tailwind CSS', 'Node.js', 'Azure', 'CI/CD Pipelines', 'Sequelize', 'Stripe', 'OpenAI', 'MSAL', 'GitHub', 'DevOps', 'Postman'].map(skill => (
-            <li key={skill} className="bg-indigo-600 px-2 py-1 md:px-4 md:py-2 rounded-md text-white text-xs md:text-base">
-              {skill}
+          {['Sites vitrines', 'Applications web', 'Systèmes de réservation', 'Outils IA', 'E-commerce', 'Sites responsive'].map(service => (
+            <li key={service} className="bg-indigo-600 px-2 py-1 md:px-4 md:py-2 rounded-md text-white text-xs md:text-base">
+              {service}
             </li>
           ))}
         </ul>
@@ -86,9 +86,9 @@ function Home() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.5, delay: 1.5 }}
       >
-        <h3 className="text-lg md:text-2xl font-semibold mb-4">Un peu plus sur moi</h3>
+        <h3 className="text-lg md:text-2xl font-semibold mb-4">Pourquoi me choisir ?</h3>
         <p className="text-sm md:text-lg text-gray-300 leading-tight">
-          Passionné par le développement web depuis plusieurs années. Spécialiste de React, Tailwind CSS, et Node.js, je me concentre sur la création d'expériences utilisateur fluides et des solutions backend robustes.
+          Je transforme vos idées en sites web professionnels qui attirent vos clients. De la conception à la mise en ligne, je m'occupe de tout pour que vous puissiez vous concentrer sur votre business.
         </p>
       </motion.div>
     </div>
