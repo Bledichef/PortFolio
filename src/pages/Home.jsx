@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet";
 
 function Home() {
   // Utilisation d'un state pour forcer un re-render
@@ -10,7 +11,13 @@ function Home() {
   }, []);
 
   return (
-    <div className="bg-slate-900 text-white py-16 px-4 relative overflow-hidden">
+    <>
+      <Helmet>
+        <title>Guillaume Colin - Développeur Web Full-Stack | Création de Sites Web</title>
+        <meta name="description" content="Développeur web freelance spécialisé en React, Node.js. Création de sites vitrines, e-commerce, applications sur mesure et solutions d'automatisation. Projets CV Analyzer, OKRDV, Le Village." />
+        <meta name="keywords" content="développeur web freelance, React, Node.js, sites web, e-commerce, applications web, automatisation, Guillaume Colin" />
+      </Helmet>
+      <div className="bg-slate-900 text-white py-16 px-4 relative overflow-hidden">
       {/* Éléments décoratifs subtils */}
       <div className="absolute top-20 left-10 w-32 h-32 bg-blue-500/10 rounded-full blur-xl"></div>
       <div className="absolute bottom-20 right-10 w-40 h-40 bg-orange-500/10 rounded-full blur-xl"></div>
@@ -173,6 +180,7 @@ function Home() {
         </div>
       </motion.div>
     </div>
+    </>
   );
 }
 

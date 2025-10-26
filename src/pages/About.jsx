@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { Helmet } from "react-helmet";
 
 function About() {
   const controls = useAnimation();
@@ -20,7 +21,13 @@ function About() {
   };
 
   return (
-    <div className="bg-slate-900 text-white py-16 relative overflow-hidden">
+    <>
+      <Helmet>
+        <title>À propos - Guillaume Colin | Développeur Web Full-Stack</title>
+        <meta name="description" content="Découvrez Guillaume Colin, développeur web freelance passionné. Spécialisé en React, Node.js, création de sites web et solutions d'automatisation. Accompagnement personnalisé de A à Z." />
+        <meta name="keywords" content="à propos Guillaume Colin, développeur web freelance, React, Node.js, accompagnement projet web" />
+      </Helmet>
+      <div className="bg-slate-900 text-white py-16 relative overflow-hidden">
       {/* Éléments décoratifs subtils */}
       <div className="absolute top-10 right-20 w-28 h-28 bg-blue-500/8 rounded-full blur-xl"></div>
       <div className="absolute bottom-10 left-20 w-36 h-36 bg-orange-500/8 rounded-full blur-xl"></div>
@@ -188,6 +195,7 @@ function About() {
         </div>
       </div>
     </div>
+    </>
   );
 }
 
