@@ -1,8 +1,6 @@
 import React, { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faServer, faLaptopCode, faCloud, faCreditCard, faLock, faToolbox } from '@fortawesome/free-solid-svg-icons';
 
 function About() {
   const controls = useAnimation();
@@ -22,91 +20,173 @@ function About() {
   };
 
   return (
-    <div className="bg-gray-900 text-white h-full min-h-screen flex flex-col justify-center items-center relative overflow-hidden">
-      {/* Effet d'arrière-plan avec des formes flottantes */}
-      <motion.div
-        className="absolute w-96 h-96 bg-indigo-700 rounded-full top-10 left-10 opacity-30"
-        animate={{ scale: [1, 1.2, 1], rotate: [0, 360, 0] }}
-        transition={{ duration: 10, repeat: Infinity }}
-      ></motion.div>
-      <motion.div
-        className="absolute w-72 h-72 bg-indigo-600 rounded-full bottom-10 right-10 opacity-30"
-        animate={{ scale: [1, 1.2, 1], rotate: [0, -360, 0] }}
-        transition={{ duration: 12, repeat: Infinity }}
-      ></motion.div>
+    <div className="bg-slate-900 text-white py-16 relative overflow-hidden">
+      {/* Éléments décoratifs subtils */}
+      <div className="absolute top-10 right-20 w-28 h-28 bg-blue-500/8 rounded-full blur-xl"></div>
+      <div className="absolute bottom-10 left-20 w-36 h-36 bg-orange-500/8 rounded-full blur-xl"></div>
 
-      {/* Titre de la section */}
-      <motion.h2
-        className="text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-600 mb-12 z-10 font-poppins tracking-wide"
-        initial={{ opacity: 0, y: -50 }}
+      <div className="container mx-auto px-4">
+        {/* Titre */}
+        <motion.h1
+          className="text-4xl md:text-5xl font-bold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-orange-400 to-emerald-400"
+          initial={{ opacity: 0, y: -30 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
+          transition={{ duration: 0.8 }}
       >
         À propos de moi
-      </motion.h2>
+        </motion.h1>
 
-      {/* Contenu de la section avec fond transparent */}
+        {/* Contenu principal */}
+        <div className="max-w-4xl mx-auto space-y-16">
+          
+          {/* Qui je suis */}
       <motion.div
-        className="max-w-4xl mx-auto bg-gray-800 bg-opacity-70 p-10 rounded-xl shadow-xl z-10"
+            className="text-center"
         initial="hidden"
         animate={controls}
         variants={variants}
         ref={ref}
       >
-        <p className="text-xl font-semibold mb-6 text-white">
-          Créateur de sites web professionnels | Spécialiste en solutions digitales
-        </p>
-        <p className="text-lg mb-4 text-gray-300 leading-relaxed">
-          Avec plusieurs années d'expérience dans la création de sites web, je vous accompagne de A à Z dans vos projets digitaux. De l'idée initiale à la mise en ligne, je m'occupe de tout : design, développement, hébergement et maintenance. Mon objectif ? Créer des sites qui fonctionnent parfaitement et qui vous font gagner des clients.
-        </p>
-        <p className="text-lg mb-4 text-gray-300 leading-relaxed">
-          J'ai développé des solutions variées : des sites vitrines pour restaurants, des outils d'intelligence artificielle pour l'analyse de CV, et des systèmes de gestion de rendez-vous. Chaque projet est unique et adapté aux besoins spécifiques de mes clients. Je maîtrise les paiements en ligne, l'intégration d'outils d'IA, et la création d'interfaces intuitives.
-        </p>
-        <p className="text-lg mb-6 text-gray-300 leading-relaxed">
-          Passionné par l'innovation et toujours à l'affût des dernières tendances web, je m'engage à vous livrer des solutions modernes et performantes. Votre réussite est ma priorité, et je mets tout en œuvre pour créer des sites qui dépassent vos attentes.
-        </p>
+            <h2 className="text-3xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-orange-400">
+              Qui je suis
+            </h2>
+            <p className="text-xl text-slate-300 leading-relaxed max-w-2xl mx-auto">
+              Développeur web passionné qui transforme vos idées en sites web performants et modernes.
+            </p>
+          </motion.div>
 
-        {/* Compétences clés */}
-        <p className="text-2xl font-bold mb-4 text-white">Mes domaines d'expertise :</p>
-        <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <li className="text-lg text-gray-300 flex items-center">
-            <span className="bg-indigo-200 text-indigo-800 px-3 py-2 rounded-lg font-semibold mr-2 shadow-sm flex items-center">
-              <FontAwesomeIcon icon={faLaptopCode} className="mr-2 text-indigo-600" /> Sites web modernes:
-            </span>
-            Design responsive, interfaces intuitives
-          </li>
-          <li className="text-lg text-gray-300 flex items-center">
-            <span className="bg-indigo-200 text-indigo-800 px-3 py-2 rounded-lg font-semibold mr-2 shadow-sm flex items-center">
-              <FontAwesomeIcon icon={faServer} className="mr-2 text-indigo-600" /> Applications sur mesure:
-            </span>
-            Systèmes de gestion, outils métier
-          </li>
-          <li className="text-lg text-gray-300 flex items-center">
-            <span className="bg-indigo-200 text-indigo-800 px-3 py-2 rounded-lg font-semibold mr-2 shadow-sm flex items-center">
-              <FontAwesomeIcon icon={faCloud} className="mr-2 text-indigo-600" /> Hébergement & maintenance:
-            </span>
-            Mise en ligne, suivi, mises à jour
-          </li>
-          <li className="text-lg text-gray-300 flex items-center">
-            <span className="bg-indigo-200 text-indigo-800 px-3 py-2 rounded-lg font-semibold mr-2 shadow-sm flex items-center">
-              <FontAwesomeIcon icon={faCreditCard} className="mr-2 text-indigo-600" /> Paiements en ligne:
-            </span>
-            Boutiques e-commerce, systèmes de facturation
-          </li>
-          <li className="text-lg text-gray-300 flex items-center">
-            <span className="bg-indigo-200 text-indigo-800 px-3 py-2 rounded-lg font-semibold mr-2 shadow-sm flex items-center">
-              <FontAwesomeIcon icon={faLock} className="mr-2 text-indigo-600" /> Sécurité & confidentialité:
-            </span>
-            Protection des données, authentification
-          </li>
-          <li className="text-lg text-gray-300 flex items-center">
-            <span className="bg-indigo-200 text-indigo-800 px-3 py-2 rounded-lg font-semibold mr-2 shadow-sm flex items-center">
-              <FontAwesomeIcon icon={faToolbox} className="mr-2 text-indigo-600" /> Intégrations avancées:
-            </span>
-            IA, APIs externes, automatisation
-          </li>
-        </ul>
-      </motion.div>
+          {/* Ce que je fais */}
+          <motion.div
+            className="text-center"
+            initial="hidden"
+            animate={controls}
+            variants={variants}
+            ref={ref}
+          >
+            <h2 className="text-3xl font-bold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-blue-400">
+              Ce que je fais
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {[
+                { 
+                  icon: "🌐", 
+                  title: "Sites web sur mesure", 
+                  desc: "De la conception à la mise en ligne, je crée des sites qui vous ressemblent" 
+                },
+                { 
+                  icon: "⚡", 
+                  title: "Applications métier", 
+                  desc: "Outils personnalisés pour automatiser vos processus et gagner du temps" 
+                },
+                { 
+                  icon: "🔧", 
+                  title: "Intégrations avancées", 
+                  desc: "Paiements, IA, APIs - j'intègre tous les outils dont vous avez besoin" 
+                }
+              ].map((item, index) => (
+                <motion.div 
+                  key={index}
+                  className="bg-slate-800 p-6 rounded-xl hover:bg-slate-700 hover:scale-105 hover:shadow-2xl transition-all duration-300 border border-slate-700 hover:border-orange-400"
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
+                >
+                  <div className="text-4xl mb-4">{item.icon}</div>
+                  <h3 className="text-xl font-semibold mb-3 text-white">{item.title}</h3>
+                  <p className="text-slate-300">{item.desc}</p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Pourquoi me choisir */}
+          <motion.div
+            className="text-center"
+            initial="hidden"
+            animate={controls}
+            variants={variants}
+            ref={ref}
+          >
+            <h2 className="text-3xl font-bold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">
+              Pourquoi me choisir
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {[
+                { 
+                  icon: "🚀", 
+                  title: "Rapide & efficace", 
+                  desc: "Votre site en ligne sous 2-4 semaines avec un code optimisé" 
+                },
+                { 
+                  icon: "🤝", 
+                  title: "Accompagnement total", 
+                  desc: "De l'idée au lancement, je vous guide à chaque étape" 
+                },
+                { 
+                  icon: "💎", 
+                  title: "Qualité garantie", 
+                  desc: "Code propre, sécurisé et maintenu dans le temps" 
+                }
+              ].map((item, index) => (
+                <motion.div 
+                  key={index}
+                  className="bg-slate-800 p-6 rounded-xl hover:bg-slate-700 hover:scale-105 hover:shadow-2xl transition-all duration-300 border border-slate-700 hover:border-amber-400"
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
+                >
+                  <div className="text-4xl mb-4">{item.icon}</div>
+                  <h3 className="text-xl font-semibold mb-3 text-white">{item.title}</h3>
+                  <p className="text-slate-300">{item.desc}</p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Contact CTA */}
+          <motion.div
+            className="text-center bg-slate-800 p-8 rounded-xl border border-slate-700"
+            initial="hidden"
+            animate={controls}
+            variants={variants}
+            ref={ref}
+          >
+            <h2 className="text-3xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-blue-400">
+              Prêt à démarrer ?
+            </h2>
+            <p className="text-lg text-slate-300 mb-6">
+              Discutons de votre projet et découvrons ensemble comment je peux vous aider.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <motion.a
+                href="mailto:colinguillaume641@yahoo.fr"
+                className="px-8 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300 font-semibold"
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                📧 Me contacter
+              </motion.a>
+              <motion.a
+                href="https://wa.me/33666742480?text=Bonjour Guillaume, j'aimerais discuter de mon projet web"
+                className="px-8 py-4 bg-green-600 text-white rounded-lg hover:bg-green-700 transition duration-300 font-semibold"
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                💬 WhatsApp
+              </motion.a>
+              <motion.a
+                href="tel:+33666742480"
+                className="px-8 py-4 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition duration-300 font-semibold"
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                📞 Appeler
+              </motion.a>
+            </div>
+          </motion.div>
+
+        </div>
+      </div>
     </div>
   );
 }

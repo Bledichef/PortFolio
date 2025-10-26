@@ -10,27 +10,35 @@ function Header() {
   };
 
   return (
-    <header className="bg-gray-800 text-white p-4">
+    <header className="bg-slate-800 text-white p-4">
       <div className="flex justify-between items-center">
-        {/* Logo */}
-        <div className="flex-shrink-0">
-          <img src={Logo} alt="Logo" className="h-16 md:h-20 w-auto rounded-lg" />
-        </div>
+              {/* Logo avec texte */}
+              <Link to="/" className="flex items-center space-x-3 group cursor-pointer">
+                <img 
+                  src={Logo} 
+                  alt="Logo" 
+                  className="h-12 md:h-16 w-auto rounded-lg transition-transform duration-300 group-hover:scale-110" 
+                />
+                <div className="hidden sm:block">
+                  <h1 className="text-xl md:text-2xl font-bold text-white group-hover:text-orange-400 transition-colors duration-300">Guillaume Colin</h1>
+                  <p className="text-sm text-slate-300 group-hover:text-slate-200 transition-colors duration-300">Développeur Web</p>
+                </div>
+              </Link>
 
         {/* Menu Desktop */}
         <nav className="hidden md:block">
           <ul className="flex space-x-6">
             <li>
-              <Link to="/" className="hover:text-indigo-400 transition-colors duration-200">Accueil</Link>
+              <Link to="/" className="hover:text-blue-400 transition-colors duration-200">Accueil</Link>
             </li>
             <li>
-              <Link to="/about" className="hover:text-indigo-400 transition-colors duration-200">À propos</Link>
+              <Link to="/about" className="hover:text-blue-400 transition-colors duration-200">À propos</Link>
             </li>
             <li>
-              <Link to="/services" className="hover:text-indigo-400 transition-colors duration-200">Services</Link>
+              <Link to="/services" className="hover:text-blue-400 transition-colors duration-200">Services</Link>
             </li>
             <li>
-              <Link to="/portfolio" className="hover:text-indigo-400 transition-colors duration-200">Portfolio</Link>
+                  <Link to="/portfolio" className="hover:text-blue-400 transition-colors duration-200">Quelques Créations</Link>
             </li>
           </ul>
         </nav>
@@ -53,7 +61,7 @@ function Header() {
           <li>
             <Link 
               to="/" 
-              className="block py-2 hover:text-indigo-400 transition-colors duration-200"
+              className="block py-2 hover:text-blue-400 transition-colors duration-200"
               onClick={() => setIsMenuOpen(false)}
             >
               Accueil
@@ -62,7 +70,7 @@ function Header() {
           <li>
             <Link 
               to="/about" 
-              className="block py-2 hover:text-indigo-400 transition-colors duration-200"
+              className="block py-2 hover:text-blue-400 transition-colors duration-200"
               onClick={() => setIsMenuOpen(false)}
             >
               À propos
@@ -71,20 +79,20 @@ function Header() {
           <li>
             <Link 
               to="/services" 
-              className="block py-2 hover:text-indigo-400 transition-colors duration-200"
+              className="block py-2 hover:text-blue-400 transition-colors duration-200"
               onClick={() => setIsMenuOpen(false)}
             >
               Services
             </Link>
           </li>
           <li>
-            <Link 
-              to="/portfolio" 
-              className="block py-2 hover:text-indigo-400 transition-colors duration-200"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Portfolio
-            </Link>
+                  <Link
+                    to="/portfolio"
+                    className="block py-2 hover:text-blue-400 transition-colors duration-200"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Quelques Créations
+                  </Link>
           </li>
         </ul>
       </nav>
