@@ -46,7 +46,7 @@ function ArticleEcommerce() {
             <h2 className="text-3xl font-bold mb-6 text-orange-400">Pourquoi ces erreurs sont fatales</h2>
             
             <p className="text-slate-300 mb-6 leading-relaxed">
-              Créer un site e-commerce qui convertit n'est pas simple. 70% des boutiques en ligne échouent dans les 
+              Créer un site e-commerce qui convertit n'est pas simple. En 2025, 70% des boutiques en ligne échouent dans les 
               deux premières années, souvent à cause des mêmes erreurs répétées. Voici les 5 erreurs les plus 
               courantes que j'observe chez mes clients et comment les éviter.
             </p>

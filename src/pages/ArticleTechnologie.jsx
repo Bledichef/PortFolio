@@ -8,7 +8,7 @@ function ArticleTechnologie() {
       <Helmet>
         <title>Comment choisir la bonne technologie pour votre site web en 2025 | Guillaume Colin</title>
         <meta name="description" content="Guide complet pour choisir la technologie adaptée à votre projet web : React, Vue.js, WordPress, Node.js. Comparaison des avantages et inconvénients." />
-        <meta name="keywords" content="choisir technologie site web, React vs Vue.js, WordPress vs React, Node.js, développement web 2024" />
+        <meta name="keywords" content="choisir technologie site web, React vs Vue.js, WordPress vs React, Node.js, développement web 2025" />
       </Helmet>
       
       <div className="bg-slate-900 text-white py-16">
@@ -47,7 +47,7 @@ function ArticleTechnologie() {
             
             <p className="text-slate-300 mb-6 leading-relaxed">
               Choisir la mauvaise technologie peut coûter cher : développement plus long, maintenance difficile, 
-              performances décevantes, et même abandon du projet. En 2024, avec l'évolution rapide du web, 
+              performances décevantes, et même abandon du projet. En 2025, avec l'évolution rapide du web, 
               il est essentiel de faire le bon choix dès le départ.
             </p>
 

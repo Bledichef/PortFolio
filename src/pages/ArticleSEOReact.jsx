@@ -8,7 +8,7 @@ function ArticleSEOReact() {
       <Helmet>
         <title>SEO pour développeurs : optimiser votre site React pour Google | Guillaume Colin</title>
         <meta name="description" content="Guide complet pour optimiser un site React pour les moteurs de recherche : SSR, meta tags, performance, données structurées et plus encore." />
-        <meta name="keywords" content="SEO React, optimisation Google, SSR, meta tags, performance, données structurées, Next.js" />
+        <meta name="keywords" content="SEO React, optimisation Google, SSR, meta tags, performance, données structurées, react-helmet" />
       </Helmet>
       
       <div className="bg-slate-900 text-white py-16">
@@ -48,7 +48,7 @@ function ArticleSEOReact() {
             <p className="text-slate-300 mb-6 leading-relaxed">
               React est excellent pour créer des interfaces utilisateur dynamiques, mais il pose des défis uniques pour le SEO. 
               Les applications React traditionnelles sont des Single Page Applications (SPA) qui rendent le contenu côté client, 
-              ce qui peut poser problème aux moteurs de recherche. Voici comment résoudre ces défis.
+              ce qui peut poser problème aux moteurs de recherche. En 2025, voici comment résoudre ces défis.
             </p>
 
             <div className="bg-red-600/20 p-6 rounded-xl mb-8 border border-red-500/30">
@@ -70,22 +70,22 @@ function ArticleSEOReact() {
             </p>
 
             <div className="bg-slate-800 p-6 rounded-xl mb-8 border border-slate-700">
-              <h3 className="text-xl font-semibold mb-4 text-blue-400">Next.js : La solution recommandée</h3>
+              <h3 className="text-xl font-semibold mb-4 text-blue-400">React avec optimisations SEO</h3>
               <div className="space-y-4 text-slate-300">
-                <p><strong>Avantages de Next.js :</strong></p>
+                <p><strong>Solutions pour React classique :</strong></p>
                 <ul className="ml-4 space-y-2">
-                  <li>• SSR intégré et optimisé</li>
-                  <li>• Génération statique (SSG) pour les performances</li>
-                  <li>• Optimisation automatique des images</li>
-                  <li>• Code splitting automatique</li>
-                  <li>• API routes intégrées</li>
+                  <li>• react-helmet pour les meta tags dynamiques</li>
+                  <li>• react-snap pour le pré-rendu statique</li>
+                  <li>• Optimisation manuelle des images</li>
+                  <li>• Code splitting avec React.lazy</li>
+                  <li>• Sitemap généré automatiquement</li>
                 </ul>
                 
                 <div className="mt-6 p-4 bg-green-600/20 rounded-lg border border-green-500/30">
                   <p className="text-green-400 font-semibold">💡 Exemple concret :</p>
                   <p className="text-slate-300 mt-2">
-                    Mon portfolio utilise Next.js avec SSR. Résultat : 
-                    <strong> 95/100 sur PageSpeed Insights</strong> et 
+                    Ce portfolio utilise React avec react-helmet et optimisations manuelles. Résultat : 
+                    <strong> SEO optimisé</strong> et 
                     <strong> indexation parfaite par Google</strong>.
                   </p>
                 </div>
@@ -143,8 +143,8 @@ function ArticlePage({ article }) {
     "@type": "Organization",
     "name": "GC Consulting"
   },
-  "datePublished": "2024-01-15",
-  "dateModified": "2024-01-15"
+  "datePublished": "2025-10-20",
+  "dateModified": "2025-10-20"
 };
 
 // Dans votre composant
@@ -172,7 +172,7 @@ function ArticlePage({ article }) {
               <div className="bg-slate-800 p-6 rounded-xl border border-slate-700">
                 <h3 className="text-xl font-semibold mb-4 text-red-400">❌ Erreurs à éviter</h3>
                 <ul className="text-slate-300 space-y-2">
-                  <li>• <strong>Bundle trop lourd :</strong> > 250KB</li>
+                  <li>• <strong>Bundle trop lourd :</strong> &gt; 250KB</li>
                   <li>• <strong>Images non optimisées :</strong> PNG lourds</li>
                   <li>• <strong>Fonts bloquantes :</strong> Sans preload</li>
                   <li>• <strong>CSS non critique :</strong> Chargement synchrone</li>
@@ -267,7 +267,7 @@ const generateSitemap = () => {
                 <div>
                   <p><strong>Performance :</strong></p>
                   <ul className="ml-4 space-y-1">
-                    <li>☐ Score Lighthouse > 90</li>
+                    <li>☐ Score Lighthouse &gt; 90</li>
                     <li>☐ Core Web Vitals optimisés</li>
                     <li>☐ Images compressées</li>
                     <li>☐ Code splitting activé</li>
@@ -283,7 +283,7 @@ const generateSitemap = () => {
             <p className="text-slate-300 mb-8 leading-relaxed">
               Optimiser un site React pour le SEO nécessite une approche technique spécifique. Le SSR, les meta tags dynamiques, 
               les données structurées et l'optimisation des performances sont les piliers d'un bon référencement. 
-              Avec Next.js et les bonnes pratiques, vous pouvez créer des applications React qui dominent Google.
+              Avec React et les bonnes pratiques, vous pouvez créer des applications qui dominent Google.
             </p>
 
             {/* CTA */}

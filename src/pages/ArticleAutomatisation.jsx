@@ -43,20 +43,21 @@ function ArticleAutomatisation() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <h2 className="text-3xl font-bold mb-6 text-orange-400">Pourquoi l'automatisation est cruciale en 2024</h2>
+            <h2 className="text-3xl font-bold mb-6 text-orange-400">Pourquoi l'automatisation est cruciale en 2025</h2>
             
             <p className="text-slate-300 mb-6 leading-relaxed">
-              Dans un monde où la concurrence est féroce, l'automatisation n'est plus un luxe mais une nécessité. 
+              Dans un monde où la concurrence est féroce en 2025, l'automatisation n'est plus un luxe mais une nécessité. 
               Les entreprises qui automatisent leurs processus gagnent en moyenne 10h/semaine et réduisent leurs erreurs de 80%. 
               Voici comment transformer votre entreprise avec des outils web sur mesure.
             </p>
 
             <div className="bg-gradient-to-r from-green-600/20 to-blue-600/20 p-6 rounded-xl mb-8 border border-green-500/30">
-              <h3 className="text-xl font-semibold mb-4 text-green-400">💡 Cas client : Restaurant Le Village</h3>
+              <h3 className="text-xl font-semibold mb-4 text-green-400">💡 Cas client anonyme : Site d'adhésion</h3>
               <p className="text-slate-300 leading-relaxed">
-                <strong>Problème :</strong> Gestion manuelle des réservations, relances par téléphone, planning sur papier.<br />
-                <strong>Solution :</strong> Système de réservation automatique avec confirmations email et gestion planning.<br />
-                <strong>Résultat :</strong> 8h/semaine économisées + 40% de réservations en plus.
+                <strong>Problème :</strong> Adhésion par site internet, vérification paiement manuelle, création de compte manuelle.<br />
+                <strong>Conséquence :</strong> Plusieurs jours de délai pour l'utilisateur qui a payé = perte de crédibilité.<br />
+                <strong>Solution :</strong> Automatisation complète : paiement → vérification → création compte → accès immédiat.<br />
+                <strong>Résultat :</strong> Accès instantané + crédibilité restaurée + 0 erreur humaine.
               </p>
             </div>
 
@@ -209,35 +210,6 @@ function ArticleAutomatisation() {
                   Apprentissage de l'outil et optimisation continue
                 </li>
               </ol>
-            </div>
-
-            <h2 className="text-3xl font-bold mb-6 text-orange-400">ROI de l'automatisation : calcul concret</h2>
-
-            <div className="bg-gradient-to-r from-blue-600/20 to-orange-600/20 p-6 rounded-xl mb-8 border border-blue-500/30">
-              <h3 className="text-xl font-semibold mb-4 text-blue-400">Exemple : Cabinet de conseil</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-slate-300">
-                <div>
-                  <p><strong>Coûts avant automatisation :</strong></p>
-                  <ul className="ml-4 space-y-1">
-                    <li>• Assistant : 2000€/mois</li>
-                    <li>• Erreurs : 500€/mois</li>
-                    <li>• Temps perdu : 1000€/mois</li>
-                    <li><strong>Total : 3500€/mois</strong></li>
-                  </ul>
-                </div>
-                <div>
-                  <p><strong>Avec automatisation :</strong></p>
-                  <ul className="ml-4 space-y-1">
-                    <li>• Outil sur mesure : 800€/mois</li>
-                    <li>• Erreurs : 50€/mois</li>
-                    <li>• Temps gagné : 0€/mois</li>
-                    <li><strong>Total : 850€/mois</strong></li>
-                  </ul>
-                </div>
-              </div>
-              <div className="mt-4 p-4 bg-green-600/20 rounded-lg border border-green-500/30 text-center">
-                <p className="text-green-400 font-bold text-xl">Économie : 2650€/mois soit 31 800€/an !</p>
-              </div>
             </div>
 
             <h2 className="text-3xl font-bold mb-6 text-orange-400">Conclusion</h2>
