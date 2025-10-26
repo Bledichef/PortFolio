@@ -7,6 +7,11 @@ import About from "./pages/About";
 import Portfolio from "./pages/Portfolio";
 import Services from "./pages/Services";
 import FAQ from "./pages/FAQ";
+import Blog from "./pages/Blog";
+import ArticleTechnologie from "./pages/ArticleTechnologie";
+import ArticleEcommerce from "./pages/ArticleEcommerce";
+import ArticleAutomatisation from "./pages/ArticleAutomatisation";
+import ArticleSEOReact from "./pages/ArticleSEOReact";
 
 function App() {
   return (
@@ -20,6 +25,11 @@ function App() {
                   <Route path="/portfolio" element={<Portfolio />} />
                   <Route path="/services" element={<Services />} />
                   <Route path="/faq" element={<FAQ />} />
+                  <Route path="/blog" element={<Blog />} />
+                  <Route path="/blog/choisir-technologie-site-web-2025" element={<ArticleTechnologie />} />
+                  <Route path="/blog/erreurs-site-ecommerce-eviter" element={<ArticleEcommerce />} />
+                  <Route path="/blog/automatisation-web-gagner-temps" element={<ArticleAutomatisation />} />
+                  <Route path="/blog/seo-react-optimiser-google" element={<ArticleSEOReact />} />
                 </Routes>
         </main>
         <Footer />

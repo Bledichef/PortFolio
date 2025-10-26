@@ -43,6 +43,9 @@ function Header() {
                   <li>
                     <Link to="/faq" className="hover:text-blue-400 transition-colors duration-200">FAQ</Link>
                   </li>
+                  <li>
+                    <Link to="/blog" className="hover:text-blue-400 transition-colors duration-200">Blog</Link>
+                  </li>
                 </ul>
         </nav>
 
@@ -104,6 +107,15 @@ function Header() {
                     onClick={() => setIsMenuOpen(false)}
                   >
                     FAQ
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/blog"
+                    className="block py-2 hover:text-blue-400 transition-colors duration-200"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Blog
                   </Link>
                 </li>
               </ul>
