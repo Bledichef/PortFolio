@@ -2,8 +2,7 @@ import React, { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
-import CvAnalyseImage from '../assets/Cv-analyseCapture.png';
-import LevillageImage from '../assets/LeVillageCapture.png';
+// Images des projets via services de capture d'écran en ligne
 
 function Portfolio() {
   const controls = useAnimation();
@@ -51,20 +50,20 @@ function Portfolio() {
     { 
         title: "Cv Analyzer", 
         description: "Cv Analyzer est une application innovante qui utilise l'intelligence artificielle pour analyser et améliorer les CV. En quelques secondes, elle génère des recommandations personnalisées pour augmenter les chances de succès des candidats.", 
-        imgSrc: CvAnalyseImage,
+        imgSrc: "https://image.thum.io/get/width/1200/https://www.cv-analyse.fr",
         url: "https://www.cv-analyse.fr" 
     },
     {
         title: "Le Village",
         description: "Le Village est un site vitrine conçu pour le restaurant Le Village, situé à Guyancourt. Ce site présente le menu, les événements spéciaux, et permet aux clients de découvrir l'atmosphère chaleureuse du restaurant.",
-        imgSrc: LevillageImage,
+        imgSrc: "https://image.thum.io/get/width/1200/https://le-village-bay.vercel.app/",
         url: "https://le-village-bay.vercel.app/"
       },
       
     { 
         title: "OKRDV", 
         description: "OKRDV est un outil de gestion de planning professionnel qui permet aux professionnels de créer et générer une page en ligne pour la prise de réservation et la gestion de planning. Une fois qu'un client prend un rendez-vous, le professionnel peut l'accepter ou le refuser. Une fois validé, un email automatique est envoyé avec un fichier ICS pour intégrer le RDV dans tous les gestionnaires de planning.", 
-        imgSrc: "https://www.okrdv.eu/", 
+        imgSrc: "https://image.thum.io/get/width/1200/https://www.okrdv.eu/", 
         url: "https://www.okrdv.eu/"
     },
   ];
