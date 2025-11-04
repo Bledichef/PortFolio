@@ -32,9 +32,15 @@
   </url>
   <url>
     <loc>https://guillaume-colin.com/blog</loc>
-    <lastmod>2025-10-26</lastmod>
+    <lastmod>2025-10-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://guillaume-colin.com/blog/core-web-vitals-performance-site</loc>
+    <lastmod>2025-10-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://guillaume-colin.com/blog/choisir-technologie-site-web-2025</loc>
