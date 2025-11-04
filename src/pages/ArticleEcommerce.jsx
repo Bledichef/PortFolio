@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet";
+import Breadcrumb from "../components/Breadcrumb";
 
 function ArticleEcommerce() {
   return (
@@ -13,6 +14,15 @@ function ArticleEcommerce() {
       
       <div className="bg-slate-900 text-white py-16">
         <div className="container mx-auto px-4 max-w-4xl">
+          {/* Fil d'Ariane */}
+          <Breadcrumb
+            items={[
+              { label: "Accueil", path: "/" },
+              { label: "Blog", path: "/blog" },
+              { label: "Les 5 erreurs à éviter lors de la création d'un site e-commerce" }
+            ]}
+          />
+          
           {/* Header de l'article */}
           <motion.div 
             className="mb-12"
