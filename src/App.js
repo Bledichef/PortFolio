@@ -12,6 +12,7 @@ import ArticleTechnologie from "./pages/ArticleTechnologie";
 import ArticleEcommerce from "./pages/ArticleEcommerce";
 import ArticleAutomatisation from "./pages/ArticleAutomatisation";
 import ArticleSEOReact from "./pages/ArticleSEOReact";
+import ArticleCoreWebVitals from "./pages/ArticleCoreWebVitals";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
                   <Route path="/services" element={<Services />} />
                   <Route path="/faq" element={<FAQ />} />
                   <Route path="/blog" element={<Blog />} />
+                  <Route path="/blog/core-web-vitals-performance-site" element={<ArticleCoreWebVitals />} />
                   <Route path="/blog/choisir-technologie-site-web-2025" element={<ArticleTechnologie />} />
                   <Route path="/blog/erreurs-site-ecommerce-eviter" element={<ArticleEcommerce />} />
                   <Route path="/blog/automatisation-web-gagner-temps" element={<ArticleAutomatisation />} />

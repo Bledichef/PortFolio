@@ -5,6 +5,14 @@ import { Helmet } from "react-helmet";
 function Blog() {
   const articles = [
     {
+      title: "Core Web Vitals : améliorer les performances de votre site (et votre classement Google)",
+      excerpt: "Guide complet sur les Core Web Vitals : LCP, INP, CLS. Optimisez les performances de votre site web pour améliorer votre classement Google et l'expérience utilisateur.",
+      readTime: "18 min",
+      date: "28 Octobre 2025",
+      slug: "core-web-vitals-performance-site",
+      keywords: ["Core Web Vitals", "LCP", "INP", "CLS", "performance web", "optimisation"]
+    },
+    {
       title: "Comment choisir la bonne technologie pour votre site web en 2025",
       excerpt: "React, Vue.js, WordPress... Découvrez comment choisir la technologie adaptée à votre projet web selon vos besoins, budget et objectifs.",
       readTime: "8 min",
