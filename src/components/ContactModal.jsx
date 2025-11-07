@@ -86,7 +86,7 @@ function ContactModal({ isOpen, onClose }) {
       display: 'flex',
       alignItems: 'flex-start',
       justifyContent: 'center',
-      paddingTop: '2rem',
+      paddingTop: '0.5rem',
       paddingLeft: '1rem',
       paddingRight: '1rem',
       overflowY: 'auto'
@@ -114,13 +114,13 @@ function ContactModal({ isOpen, onClose }) {
           padding: '1.5rem',
           width: '100%',
           maxWidth: '32rem',
-          maxHeight: 'calc(100vh - 4rem)',
+          maxHeight: 'calc(100vh - 1rem)',
           overflowY: 'auto',
           border: '1px solid rgba(148, 163, 184, 0.3)',
           boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
           zIndex: 2,
-          marginTop: '2rem',
-          marginBottom: '2rem'
+          marginTop: '0.5rem',
+          marginBottom: '0.5rem'
         }}
         onClick={(e) => e.stopPropagation()}
       >
