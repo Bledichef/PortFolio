@@ -99,23 +99,22 @@ function ContactModal({ isOpen, onClose }) {
         }}
       />
       
-      {/* Modal */}
+      {/* Modal - Positionnée en haut, ne déborde jamais */}
       <div 
-        className="fixed flex items-start justify-center p-4 pt-8"
+        className="fixed flex items-start justify-center"
         style={{ 
           position: 'fixed',
-          top: 0, 
-          left: 0, 
-          right: 0, 
-          bottom: 0,
+          top: '2rem', 
+          left: '1rem', 
+          right: '1rem',
           zIndex: 10000,
           pointerEvents: 'none',
-          width: '100%',
-          height: '100%'
+          maxHeight: 'calc(100vh - 4rem)',
+          overflow: 'hidden'
         }}
       >
         <div 
-          className="bg-slate-800 rounded-2xl p-6 w-full max-w-lg border border-slate-700/50 shadow-2xl"
+          className="bg-slate-800 rounded-2xl p-6 w-full max-w-lg border border-slate-700/50 shadow-2xl overflow-y-auto"
           style={{ 
             maxHeight: 'calc(100vh - 4rem)',
             pointerEvents: 'auto',
