@@ -71,24 +71,26 @@ function ContactModal({ isOpen, onClose }) {
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+      <>
         {/* Overlay */}
         <motion.div
-          className="absolute inset-0 bg-black bg-opacity-50"
+          className="fixed inset-0 z-50 bg-black bg-opacity-50"
           initial={{ opacity: 0 }}
           exit={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           onClick={onClose}
         />
         
-        {/* Modal */}
-        <motion.div
-          className="relative bg-slate-800 rounded-xl p-6 w-full max-w-lg border border-slate-700 shadow-2xl"
-          initial={{ opacity: 0, scale: 0.9 }}
-          exit={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.2 }}
-        >
+        {/* Modal Container - Toujours centré dans la viewport */}
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 pointer-events-none">
+          <motion.div
+            className="bg-slate-800 rounded-xl p-6 w-full max-w-lg border border-slate-700 shadow-2xl pointer-events-auto"
+            initial={{ opacity: 0, scale: 0.9 }}
+            exit={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.2 }}
+            onClick={(e) => e.stopPropagation()}
+          >
           {/* Header */}
           <div className="flex justify-between items-center mb-4">
             <h2 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-blue-400">
@@ -224,8 +226,9 @@ function ContactModal({ isOpen, onClose }) {
               </button>
             </div>
           </form>
-        </motion.div>
-      </div>
+          </motion.div>
+        </div>
+      </>
     </AnimatePresence>
   );
 }
