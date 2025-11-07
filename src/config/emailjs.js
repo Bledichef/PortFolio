@@ -20,20 +20,36 @@ export const EMAILJS_CONFIG = {
 };
 
 // Template d'email pour les messages de contact
+// Adapté pour utiliser le template_feedback existant d'EmailJS
 export const CONTACT_EMAIL_TEMPLATE = {
   to_email: 'colinguillaume641@yahoo.fr',
   from_name: 'Portfolio Guillaume Colin',
   subject: 'Nouveau message de contact - Portfolio',
 
   // Fonction pour générer les paramètres du template
-  getTemplateParams: (contactData) => ({
-    to_email: 'colinguillaume641@yahoo.fr',
-    from_name: contactData.name || 'Visiteur anonyme',
-    from_email: contactData.email,
-    subject: contactData.subject || 'Contact depuis le site',
+  // Adapté pour correspondre aux variables du template_feedback
+  getTemplateParams: (contactData) => {
+    // Pour le formulaire de contact, on simule un "rating" de 5 (contact = positif)
+    // et on utilise "Contact Portfolio" comme catégorie
+    const rating = 5;
+    const category = contactData.subject || 'Contact Portfolio';
+    const comment = contactData.message || 'Aucun message';
     
-    // Contenu de l'email formaté
-    message: `
+    return {
+      to_email: 'colinguillaume641@yahoo.fr',
+      from_name: 'Portfolio Guillaume Colin',
+      subject: 'Nouveau message de contact - Portfolio',
+      
+      // Variables attendues par template_feedback
+      rating: rating,
+      stars: '⭐'.repeat(rating),
+      category: category,
+      comment: comment,
+      user_email: contactData.email || 'Non fourni',
+      timestamp: new Date().toLocaleString('fr-FR'),
+      
+      // Corps de l'email formaté (compatible avec template_feedback)
+      message: `
 Nouveau message reçu depuis votre portfolio :
 
 👤 Nom : ${contactData.name || 'Non fourni'}
@@ -47,14 +63,8 @@ ${contactData.message || 'Aucun message'}
 
 ---
 Message automatique depuis guillaume-colin.com
-    `.trim(),
-    
-    // Variables individuelles pour le template EmailJS
-    user_name: contactData.name || 'Visiteur anonyme',
-    user_email: contactData.email || 'Non fourni',
-    message_subject: contactData.subject || 'Contact depuis le site',
-    message_content: contactData.message || 'Aucun message',
-    timestamp: new Date().toLocaleString('fr-FR'),
-  })
+      `.trim()
+    };
+  }
 };
 
