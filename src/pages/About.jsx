@@ -1,23 +1,15 @@
-import React, { useEffect } from "react";
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import React from "react";
+import { motion } from "framer-motion";
 import { Helmet } from "react-helmet";
 
 function About() {
-  const controls = useAnimation();
-  const { ref, inView } = useInView({
-    threshold: 0.1,
-  });
-
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    }
-  }, [controls, inView]);
-
-  const variants = {
-    hidden: { opacity: 0, y: 100 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      transition: { duration: 0.5, ease: "easeOut" } 
+    },
   };
 
   return (
@@ -36,24 +28,25 @@ function About() {
         {/* Titre */}
         <motion.h1
           className="text-4xl md:text-5xl font-bold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-orange-400 to-emerald-400"
-          initial={{ opacity: 0, y: -30 }}
-        animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-      >
-        À propos de moi
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.5 }}
+        >
+          À propos de moi
         </motion.h1>
 
         {/* Contenu principal */}
         <div className="max-w-4xl mx-auto space-y-16">
           
           {/* Qui je suis */}
-      <motion.div
+          <motion.div
             className="text-center"
-        initial="hidden"
-        animate={controls}
-        variants={variants}
-        ref={ref}
-      >
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+            variants={fadeInUp}
+          >
             <h2 className="text-3xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-orange-400">
               Qui je suis
             </h2>
@@ -66,9 +59,9 @@ function About() {
           <motion.div
             className="text-center"
             initial="hidden"
-            animate={controls}
-            variants={variants}
-            ref={ref}
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+            variants={fadeInUp}
           >
             <h2 className="text-3xl font-bold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-blue-400">
               Ce que je fais
@@ -94,9 +87,10 @@ function About() {
                 <motion.div 
                   key={index}
                   className="bg-slate-800 p-6 rounded-xl hover:bg-slate-700 hover:scale-105 hover:shadow-2xl transition-all duration-300 border border-slate-700 hover:border-orange-400"
-                  initial={{ opacity: 0, y: 50 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
                 >
                   <div className="text-4xl mb-4">{item.icon}</div>
                   <h3 className="text-xl font-semibold mb-3 text-white">{item.title}</h3>
@@ -110,9 +104,9 @@ function About() {
           <motion.div
             className="text-center"
             initial="hidden"
-            animate={controls}
-            variants={variants}
-            ref={ref}
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+            variants={fadeInUp}
           >
             <h2 className="text-3xl font-bold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">
               Pourquoi me choisir
@@ -138,9 +132,10 @@ function About() {
                 <motion.div 
                   key={index}
                   className="bg-slate-800 p-6 rounded-xl hover:bg-slate-700 hover:scale-105 hover:shadow-2xl transition-all duration-300 border border-slate-700 hover:border-amber-400"
-                  initial={{ opacity: 0, y: 50 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
                 >
                   <div className="text-4xl mb-4">{item.icon}</div>
                   <h3 className="text-xl font-semibold mb-3 text-white">{item.title}</h3>
@@ -154,9 +149,9 @@ function About() {
           <motion.div
             className="text-center bg-slate-800 p-8 rounded-xl border border-slate-700"
             initial="hidden"
-            animate={controls}
-            variants={variants}
-            ref={ref}
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+            variants={fadeInUp}
           >
             <h2 className="text-3xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-blue-400">
               Prêt à démarrer ?
