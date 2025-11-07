@@ -70,31 +70,30 @@ function ContactModal({ isOpen, onClose }) {
     }
   };
 
-  if (!isOpen) return null;
-
   return (
     <AnimatePresence>
-      <>
-        {/* Overlay */}
-        <motion.div
-          className="fixed inset-0 z-[100] bg-black bg-opacity-50"
-          initial={{ opacity: 0 }}
-          exit={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          onClick={onClose}
-        />
-        
-        {/* Modal Container - Toujours en haut de la page */}
-        <div className="fixed inset-0 z-[100] flex items-start justify-center p-4 pt-8 pointer-events-none">
+      {isOpen && (
+        <>
+          {/* Overlay */}
           <motion.div
-            className="bg-slate-800 rounded-2xl p-6 w-full max-w-lg border border-slate-700/50 shadow-2xl pointer-events-auto backdrop-blur-sm"
-            style={{ maxHeight: 'calc(100vh - 4rem)' }}
-            initial={{ opacity: 0, scale: 0.95, y: -20 }}
-            exit={{ opacity: 0, scale: 0.95, y: -20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{ duration: 0.3, ease: "easeOut" }}
-            onClick={(e) => e.stopPropagation()}
-          >
+            className="fixed inset-0 z-[100] bg-black bg-opacity-50"
+            initial={{ opacity: 0 }}
+            exit={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            onClick={onClose}
+          />
+          
+          {/* Modal Container - Toujours en haut de la page */}
+          <div className="fixed inset-0 z-[100] flex items-start justify-center p-4 pt-8 pointer-events-none">
+            <motion.div
+              className="bg-slate-800 rounded-2xl p-6 w-full max-w-lg border border-slate-700/50 shadow-2xl pointer-events-auto backdrop-blur-sm"
+              style={{ maxHeight: 'calc(100vh - 4rem)' }}
+              initial={{ opacity: 0, scale: 0.95, y: -20 }}
+              exit={{ opacity: 0, scale: 0.95, y: -20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+              onClick={(e) => e.stopPropagation()}
+            >
           {/* Header */}
           <div className="flex justify-between items-center mb-4 pb-3 border-b border-slate-700/50">
             <h2 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-blue-400 to-emerald-400">
@@ -232,9 +231,10 @@ function ContactModal({ isOpen, onClose }) {
               </button>
             </div>
           </form>
-          </motion.div>
-        </div>
-      </>
+            </motion.div>
+          </div>
+        </>
+      )}
     </AnimatePresence>
   );
 }
