@@ -12,17 +12,13 @@ function ContactModal({ isOpen, onClose }) {
 
   useEffect(() => {
     if (isOpen) {
-      // Sauvegarder la position de scroll
       const scrollY = window.scrollY;
-      
-      // Bloquer le scroll
       document.body.style.overflow = 'hidden';
       document.body.style.position = 'fixed';
       document.body.style.top = `-${scrollY}px`;
       document.body.style.width = '100%';
       
       return () => {
-        // Restaurer la position de scroll
         document.body.style.overflow = '';
         document.body.style.position = '';
         document.body.style.top = '';
@@ -77,195 +73,312 @@ function ContactModal({ isOpen, onClose }) {
     }
   };
 
-  if (!isOpen) {
-    return null;
-  }
+  if (!isOpen) return null;
 
   return (
-    <>
+    <div style={{ 
+      position: 'fixed', 
+      top: 0, 
+      left: 0, 
+      right: 0, 
+      bottom: 0, 
+      zIndex: 999999,
+      display: 'flex',
+      alignItems: 'flex-start',
+      justifyContent: 'center',
+      paddingTop: '2rem',
+      paddingLeft: '1rem',
+      paddingRight: '1rem',
+      overflowY: 'auto'
+    }}>
       {/* Overlay */}
       <div 
-        className="fixed bg-black bg-opacity-50"
-        onClick={onClose}
         style={{ 
-          position: 'fixed',
-          top: 0, 
-          left: 0, 
-          right: 0, 
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
           bottom: 0,
-          zIndex: 99999,
-          width: '100%',
-          height: '100%'
+          backgroundColor: 'rgba(0, 0, 0, 0.5)',
+          zIndex: 1
         }}
+        onClick={onClose}
       />
       
-      {/* Modal - Positionnée en haut, ne déborde jamais, au-dessus de tout */}
+      {/* Modal */}
       <div 
-        className="fixed flex items-start justify-center"
         style={{ 
-          position: 'fixed',
-          top: '1rem', 
-          left: '50%',
-          transform: 'translateX(-50%)',
-          width: 'calc(100% - 2rem)',
+          position: 'relative',
+          backgroundColor: '#1e293b',
+          borderRadius: '1rem',
+          padding: '1.5rem',
+          width: '100%',
           maxWidth: '32rem',
-          zIndex: 100000,
-          pointerEvents: 'none',
-          maxHeight: 'calc(100vh - 2rem)',
-          overflow: 'visible'
+          maxHeight: 'calc(100vh - 4rem)',
+          overflowY: 'auto',
+          border: '1px solid rgba(148, 163, 184, 0.3)',
+          boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
+          zIndex: 2,
+          marginTop: '2rem',
+          marginBottom: '2rem'
         }}
+        onClick={(e) => e.stopPropagation()}
       >
-        <div 
-          className="bg-slate-800 rounded-2xl p-6 w-full border border-slate-700/50 shadow-2xl overflow-y-auto"
-          style={{ 
-            maxHeight: 'calc(100vh - 2rem)',
-            pointerEvents: 'auto',
-            backgroundColor: '#1e293b',
-            position: 'relative',
-            zIndex: 100001
-          }}
-          onClick={(e) => e.stopPropagation()}
-        >
-          {/* Header */}
-          <div className="flex justify-between items-center mb-4 pb-3 border-b border-slate-700/50">
-            <h2 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-blue-400 to-emerald-400">
-              Contactez-moi
-            </h2>
+        {/* Header */}
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem', paddingBottom: '0.75rem', borderBottom: '1px solid rgba(148, 163, 184, 0.3)' }}>
+          <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', background: 'linear-gradient(to right, #fb923c, #60a5fa, #34d399)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+            Contactez-moi
+          </h2>
+          <button
+            onClick={onClose}
+            style={{ 
+              color: '#94a3b8',
+              fontSize: '1.5rem',
+              fontWeight: '300',
+              background: 'none',
+              border: 'none',
+              cursor: 'pointer',
+              width: '2rem',
+              height: '2rem',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              borderRadius: '50%'
+            }}
+            onMouseEnter={(e) => e.target.style.backgroundColor = '#334155'}
+            onMouseLeave={(e) => e.target.style.backgroundColor = 'transparent'}
+            aria-label="Fermer"
+          >
+            ×
+          </button>
+        </div>
+
+        {/* Options de contact */}
+        <div style={{ marginBottom: '1rem', padding: '0.75rem', background: 'linear-gradient(to bottom right, rgba(51, 65, 85, 0.5), rgba(30, 41, 59, 0.5))', borderRadius: '0.75rem', border: '1px solid rgba(71, 85, 105, 0.3)' }}>
+          <p style={{ color: '#cbd5e1', marginBottom: '0.5rem', fontSize: '0.75rem', fontWeight: '500' }}>Ou contactez-moi directement :</p>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
             <button
-              onClick={onClose}
-              className="text-slate-400 hover:text-white text-2xl font-light transition-all hover:rotate-90 w-7 h-7 flex items-center justify-center rounded-full hover:bg-slate-700"
-              aria-label="Fermer"
+              onClick={copyEmail}
+              style={{ 
+                padding: '0.375rem 0.75rem',
+                backgroundColor: '#2563eb',
+                color: 'white',
+                borderRadius: '0.5rem',
+                fontSize: '0.75rem',
+                fontWeight: '500',
+                border: 'none',
+                cursor: 'pointer',
+                boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)'
+              }}
+              onMouseEnter={(e) => e.target.style.backgroundColor = '#1d4ed8'}
+              onMouseLeave={(e) => e.target.style.backgroundColor = '#2563eb'}
             >
-              ×
+              {submitStatus === "copied" ? "✓ Copié !" : "📋 Email"}
+            </button>
+            <a
+              href="https://wa.me/33666742480?text=Bonjour Guillaume, j'aimerais discuter de mon projet"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ 
+                padding: '0.375rem 0.75rem',
+                backgroundColor: '#16a34a',
+                color: 'white',
+                borderRadius: '0.5rem',
+                fontSize: '0.75rem',
+                fontWeight: '500',
+                textDecoration: 'none',
+                display: 'inline-block',
+                boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)'
+              }}
+              onMouseEnter={(e) => e.target.style.backgroundColor = '#15803d'}
+              onMouseLeave={(e) => e.target.style.backgroundColor = '#16a34a'}
+            >
+              💬 WhatsApp
+            </a>
+            <a
+              href="tel:+33666742480"
+              style={{ 
+                padding: '0.375rem 0.75rem',
+                backgroundColor: '#ea580c',
+                color: 'white',
+                borderRadius: '0.5rem',
+                fontSize: '0.75rem',
+                fontWeight: '500',
+                textDecoration: 'none',
+                display: 'inline-block',
+                boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)'
+              }}
+              onMouseEnter={(e) => e.target.style.backgroundColor = '#c2410c'}
+              onMouseLeave={(e) => e.target.style.backgroundColor = '#ea580c'}
+            >
+              📞 Appeler
+            </a>
+          </div>
+        </div>
+
+        {/* Formulaire */}
+        <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+          <div>
+            <label style={{ display: 'block', color: '#e2e8f0', marginBottom: '0.375rem', fontSize: '0.75rem', fontWeight: '500' }}>
+              Nom *
+            </label>
+            <input
+              type="text"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+              placeholder="Votre nom"
+              style={{ 
+                width: '100%',
+                padding: '0.5rem 0.75rem',
+                backgroundColor: 'rgba(51, 65, 85, 0.5)',
+                color: 'white',
+                borderRadius: '0.5rem',
+                border: '1px solid rgba(71, 85, 105, 0.5)',
+                fontSize: '0.875rem',
+                outline: 'none'
+              }}
+              onFocus={(e) => e.target.style.borderColor = '#fb923c'}
+              onBlur={(e) => e.target.style.borderColor = 'rgba(71, 85, 105, 0.5)'}
+            />
+          </div>
+
+          <div>
+            <label style={{ display: 'block', color: '#e2e8f0', marginBottom: '0.375rem', fontSize: '0.75rem', fontWeight: '500' }}>
+              Email *
+            </label>
+            <input
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+              placeholder="votre@email.com"
+              style={{ 
+                width: '100%',
+                padding: '0.5rem 0.75rem',
+                backgroundColor: 'rgba(51, 65, 85, 0.5)',
+                color: 'white',
+                borderRadius: '0.5rem',
+                border: '1px solid rgba(71, 85, 105, 0.5)',
+                fontSize: '0.875rem',
+                outline: 'none'
+              }}
+              onFocus={(e) => e.target.style.borderColor = '#fb923c'}
+              onBlur={(e) => e.target.style.borderColor = 'rgba(71, 85, 105, 0.5)'}
+            />
+          </div>
+
+          <div>
+            <label style={{ display: 'block', color: '#e2e8f0', marginBottom: '0.375rem', fontSize: '0.75rem', fontWeight: '500' }}>
+              Sujet
+            </label>
+            <input
+              type="text"
+              name="subject"
+              value={formData.subject}
+              onChange={handleChange}
+              placeholder="Sujet de votre message"
+              style={{ 
+                width: '100%',
+                padding: '0.5rem 0.75rem',
+                backgroundColor: 'rgba(51, 65, 85, 0.5)',
+                color: 'white',
+                borderRadius: '0.5rem',
+                border: '1px solid rgba(71, 85, 105, 0.5)',
+                fontSize: '0.875rem',
+                outline: 'none'
+              }}
+              onFocus={(e) => e.target.style.borderColor = '#fb923c'}
+              onBlur={(e) => e.target.style.borderColor = 'rgba(71, 85, 105, 0.5)'}
+            />
+          </div>
+
+          <div>
+            <label style={{ display: 'block', color: '#e2e8f0', marginBottom: '0.375rem', fontSize: '0.75rem', fontWeight: '500' }}>
+              Message *
+            </label>
+            <textarea
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              required
+              rows="3"
+              placeholder="Décrivez votre projet ou votre demande..."
+              style={{ 
+                width: '100%',
+                padding: '0.5rem 0.75rem',
+                backgroundColor: 'rgba(51, 65, 85, 0.5)',
+                color: 'white',
+                borderRadius: '0.5rem',
+                border: '1px solid rgba(71, 85, 105, 0.5)',
+                fontSize: '0.875rem',
+                outline: 'none',
+                resize: 'none',
+                fontFamily: 'inherit'
+              }}
+              onFocus={(e) => e.target.style.borderColor = '#fb923c'}
+              onBlur={(e) => e.target.style.borderColor = 'rgba(71, 85, 105, 0.5)'}
+            />
+          </div>
+
+          {submitStatus === "success" && (
+            <div style={{ padding: '0.625rem', backgroundColor: 'rgba(22, 163, 74, 0.2)', border: '1px solid rgba(34, 197, 94, 0.5)', borderRadius: '0.5rem', color: '#4ade80', fontSize: '0.75rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <span>✓</span>
+              <span>Message envoyé ! Votre client email devrait s'ouvrir.</span>
+            </div>
+          )}
+
+          {submitStatus === "error" && (
+            <div style={{ padding: '0.625rem', backgroundColor: 'rgba(220, 38, 38, 0.2)', border: '1px solid rgba(239, 68, 68, 0.5)', borderRadius: '0.5rem', color: '#f87171', fontSize: '0.75rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <span>✗</span>
+              <span>Erreur lors de l'envoi. Veuillez réessayer.</span>
+            </div>
+          )}
+
+          <div style={{ display: 'flex', gap: '0.5rem', paddingTop: '0.5rem' }}>
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              style={{ 
+                flex: 1,
+                padding: '0.5rem 1rem',
+                background: 'linear-gradient(to right, #ea580c, #f97316)',
+                color: 'white',
+                borderRadius: '0.5rem',
+                fontWeight: '600',
+                border: 'none',
+                cursor: isSubmitting ? 'not-allowed' : 'pointer',
+                fontSize: '0.875rem',
+                opacity: isSubmitting ? 0.5 : 1,
+                boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)'
+              }}
+            >
+              {isSubmitting ? "Envoi..." : "📧 Envoyer"}
+            </button>
+            <button
+              type="button"
+              onClick={onClose}
+              style={{ 
+                padding: '0.5rem 1rem',
+                backgroundColor: 'rgba(51, 65, 85, 0.5)',
+                color: 'white',
+                borderRadius: '0.5rem',
+                fontWeight: '600',
+                border: '1px solid rgba(71, 85, 105, 0.5)',
+                cursor: 'pointer',
+                fontSize: '0.875rem'
+              }}
+              onMouseEnter={(e) => e.target.style.backgroundColor = 'rgba(51, 65, 85, 0.7)'}
+              onMouseLeave={(e) => e.target.style.backgroundColor = 'rgba(51, 65, 85, 0.5)'}
+            >
+              Annuler
             </button>
           </div>
-
-          {/* Options de contact */}
-          <div className="mb-4 p-3 bg-gradient-to-br from-slate-700/50 to-slate-800/50 rounded-xl border border-slate-600/30">
-            <p className="text-slate-300 mb-2 text-xs font-medium">Ou contactez-moi directement :</p>
-            <div className="flex flex-wrap gap-2">
-              <button
-                onClick={copyEmail}
-                className="px-3 py-1.5 bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition-all text-xs font-medium shadow-lg hover:shadow-blue-500/50 hover:scale-105"
-              >
-                {submitStatus === "copied" ? "✓ Copié !" : "📋 Email"}
-              </button>
-              <a
-                href="https://wa.me/33666742480?text=Bonjour Guillaume, j'aimerais discuter de mon projet"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-3 py-1.5 bg-green-600 hover:bg-green-500 text-white rounded-lg transition-all text-xs font-medium shadow-lg hover:shadow-green-500/50 hover:scale-105"
-              >
-                💬 WhatsApp
-              </a>
-              <a
-                href="tel:+33666742480"
-                className="px-3 py-1.5 bg-orange-600 hover:bg-orange-500 text-white rounded-lg transition-all text-xs font-medium shadow-lg hover:shadow-orange-500/50 hover:scale-105"
-              >
-                📞 Appeler
-              </a>
-            </div>
-          </div>
-
-          {/* Formulaire */}
-          <form onSubmit={handleSubmit} className="space-y-3">
-            <div>
-              <label htmlFor="name" className="block text-slate-200 mb-1.5 text-xs font-medium">
-                Nom *
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-                className="w-full px-3 py-2 bg-slate-700/50 text-white rounded-lg border border-slate-600/50 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 focus:outline-none transition-all text-sm"
-                placeholder="Votre nom"
-              />
-            </div>
-
-            <div>
-              <label htmlFor="email" className="block text-slate-200 mb-1.5 text-xs font-medium">
-                Email *
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-                className="w-full px-3 py-2 bg-slate-700/50 text-white rounded-lg border border-slate-600/50 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 focus:outline-none transition-all text-sm"
-                placeholder="votre@email.com"
-              />
-            </div>
-
-            <div>
-              <label htmlFor="subject" className="block text-slate-200 mb-1.5 text-xs font-medium">
-                Sujet
-              </label>
-              <input
-                type="text"
-                id="subject"
-                name="subject"
-                value={formData.subject}
-                onChange={handleChange}
-                className="w-full px-3 py-2 bg-slate-700/50 text-white rounded-lg border border-slate-600/50 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 focus:outline-none transition-all text-sm"
-                placeholder="Sujet de votre message"
-              />
-            </div>
-
-            <div>
-              <label htmlFor="message" className="block text-slate-200 mb-1.5 text-xs font-medium">
-                Message *
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                required
-                rows="3"
-                className="w-full px-3 py-2 bg-slate-700/50 text-white rounded-lg border border-slate-600/50 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 focus:outline-none resize-none transition-all text-sm"
-                placeholder="Décrivez votre projet ou votre demande..."
-              />
-            </div>
-
-            {submitStatus === "success" && (
-              <div className="p-2.5 bg-green-600/20 border border-green-500/50 rounded-lg text-green-400 text-xs flex items-center gap-2">
-                <span>✓</span>
-                <span>Message envoyé ! Votre client email devrait s'ouvrir.</span>
-              </div>
-            )}
-
-            {submitStatus === "error" && (
-              <div className="p-2.5 bg-red-600/20 border border-red-500/50 rounded-lg text-red-400 text-xs flex items-center gap-2">
-                <span>✗</span>
-                <span>Erreur lors de l'envoi. Veuillez réessayer.</span>
-              </div>
-            )}
-
-            <div className="flex gap-2 pt-2">
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="flex-1 px-4 py-2 bg-gradient-to-r from-orange-600 to-orange-500 hover:from-orange-500 hover:to-orange-400 text-white rounded-lg font-semibold transition-all shadow-lg hover:shadow-orange-500/50 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 text-sm"
-              >
-                {isSubmitting ? "Envoi..." : "📧 Envoyer"}
-              </button>
-              <button
-                type="button"
-                onClick={onClose}
-                className="px-4 py-2 bg-slate-700/50 hover:bg-slate-600/50 text-white rounded-lg font-semibold transition-all border border-slate-600/50 hover:border-slate-500 text-sm"
-              >
-                Annuler
-              </button>
-            </div>
-          </form>
-        </div>
+        </form>
       </div>
-    </>
+    </div>
   );
 }
 
