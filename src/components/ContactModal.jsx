@@ -93,34 +93,36 @@ function ContactModal({ isOpen, onClose }) {
           left: 0, 
           right: 0, 
           bottom: 0,
-          zIndex: 9999,
+          zIndex: 99999,
           width: '100%',
           height: '100%'
         }}
       />
       
-      {/* Modal - Positionnée en haut, ne déborde jamais */}
+      {/* Modal - Positionnée en haut, ne déborde jamais, au-dessus de tout */}
       <div 
         className="fixed flex items-start justify-center"
         style={{ 
           position: 'fixed',
-          top: '2rem', 
-          left: '1rem', 
-          right: '1rem',
-          zIndex: 10000,
+          top: '1rem', 
+          left: '50%',
+          transform: 'translateX(-50%)',
+          width: 'calc(100% - 2rem)',
+          maxWidth: '32rem',
+          zIndex: 100000,
           pointerEvents: 'none',
-          maxHeight: 'calc(100vh - 4rem)',
-          overflow: 'hidden'
+          maxHeight: 'calc(100vh - 2rem)',
+          overflow: 'visible'
         }}
       >
         <div 
-          className="bg-slate-800 rounded-2xl p-6 w-full max-w-lg border border-slate-700/50 shadow-2xl overflow-y-auto"
+          className="bg-slate-800 rounded-2xl p-6 w-full border border-slate-700/50 shadow-2xl overflow-y-auto"
           style={{ 
-            maxHeight: 'calc(100vh - 4rem)',
+            maxHeight: 'calc(100vh - 2rem)',
             pointerEvents: 'auto',
             backgroundColor: '#1e293b',
             position: 'relative',
-            zIndex: 10001
+            zIndex: 100001
           }}
           onClick={(e) => e.stopPropagation()}
         >
