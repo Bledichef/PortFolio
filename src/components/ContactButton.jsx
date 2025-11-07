@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
-import ContactModal from "./ContactModal";
+import { useNavigate } from "react-router-dom";
 
 function ContactButton({ 
   children = "📧 Me contacter", 
   className = "px-8 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300 font-semibold",
   variant = "default" // "default", "orange", "green"
 }) {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const navigate = useNavigate();
 
   // Variantes de style prédéfinies
   const variantClasses = {
@@ -18,28 +18,19 @@ function ContactButton({
 
   const finalClassName = className || variantClasses[variant];
 
-  const handleOpenModal = () => {
-    console.log('Opening modal');
-    setIsModalOpen(true);
-  };
-
-  const handleCloseModal = () => {
-    console.log('Closing modal');
-    setIsModalOpen(false);
+  const handleClick = () => {
+    navigate("/contact");
   };
 
   return (
-    <>
-      <motion.button
-        onClick={handleOpenModal}
-        className={finalClassName}
-        whileHover={{ scale: 1.05, y: -2 }}
-        whileTap={{ scale: 0.95 }}
-      >
-        {children}
-      </motion.button>
-      <ContactModal isOpen={isModalOpen} onClose={handleCloseModal} />
-    </>
+    <motion.button
+      onClick={handleClick}
+      className={finalClassName}
+      whileHover={{ scale: 1.05, y: -2 }}
+      whileTap={{ scale: 0.95 }}
+    >
+      {children}
+    </motion.button>
   );
 }
 

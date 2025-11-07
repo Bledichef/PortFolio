@@ -15,6 +15,7 @@ import ArticleCoreWebVitals from "./pages/ArticleCoreWebVitals";
 
 // Lazy loading pour améliorer les performances
 const About = lazy(() => import("./pages/About"));
+const Contact = lazy(() => import("./pages/Contact"));
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<Contact />} />
               <Route path="/portfolio" element={<Portfolio />} />
               <Route path="/services" element={<Services />} />
               <Route path="/faq" element={<FAQ />} />
