@@ -18,17 +18,27 @@ function ContactButton({
 
   const finalClassName = className || variantClasses[variant];
 
+  const handleOpenModal = () => {
+    console.log('Opening modal');
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    console.log('Closing modal');
+    setIsModalOpen(false);
+  };
+
   return (
     <>
       <motion.button
-        onClick={() => setIsModalOpen(true)}
+        onClick={handleOpenModal}
         className={finalClassName}
         whileHover={{ scale: 1.05, y: -2 }}
         whileTap={{ scale: 0.95 }}
       >
         {children}
       </motion.button>
-      <ContactModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      <ContactModal isOpen={isModalOpen} onClose={handleCloseModal} />
     </>
   );
 }

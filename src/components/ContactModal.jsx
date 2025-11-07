@@ -12,14 +12,19 @@ function ContactModal({ isOpen, onClose }) {
 
   useEffect(() => {
     if (isOpen) {
-      window.scrollTo(0, 0);
+      // Bloquer le scroll d'abord
+      const originalOverflow = document.body.style.overflow;
       document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
+      
+      // Remonter en haut après un court délai
+      requestAnimationFrame(() => {
+        window.scrollTo(0, 0);
+      });
+      
+      return () => {
+        document.body.style.overflow = originalOverflow;
+      };
     }
-    return () => {
-      document.body.style.overflow = 'unset';
-    };
   }, [isOpen]);
 
   const handleChange = (e) => {
