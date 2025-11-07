@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet";
 import { useNavigate } from "react-router-dom";
+import emailjs from '@emailjs/browser';
+import { EMAILJS_CONFIG, CONTACT_EMAIL_TEMPLATE } from '../config/emailjs';
 
 function Contact() {
   const navigate = useNavigate();
@@ -27,34 +29,38 @@ function Contact() {
     setSubmitStatus(null);
 
     try {
-      // Créer le lien mailto avec toutes les informations
-      const mailtoLink = `mailto:colinguillaume641@yahoo.fr?subject=${encodeURIComponent(
-        formData.subject || `Contact depuis le site - ${formData.name}`
-      )}&body=${encodeURIComponent(
-        `Bonjour Guillaume,\n\n` +
-        `Je vous contacte depuis votre site web.\n\n` +
-        `Nom: ${formData.name}\n` +
-        `Email: ${formData.email}\n` +
-        `Sujet: ${formData.subject || 'Sans sujet'}\n\n` +
-        `Message:\n${formData.message}\n\n` +
-        `---\n` +
-        `Message envoyé depuis guillaume-colin.com`
-      )}`;
-      
-      // Ouvrir le client email
-      window.location.href = mailtoLink;
-      
-      // Copier aussi dans le presse-papier comme backup
-      const emailText = `Nom: ${formData.name}\nEmail: ${formData.email}\nSujet: ${formData.subject}\n\nMessage:\n${formData.message}\n\n---\nEnvoyé depuis guillaume-colin.com`;
-      await navigator.clipboard.writeText(emailText);
+      // Vérifier que la configuration EmailJS est complète
+      if (!EMAILJS_CONFIG.SERVICE_ID || !EMAILJS_CONFIG.TEMPLATE_ID || !EMAILJS_CONFIG.PUBLIC_KEY) {
+        throw new Error('Configuration EmailJS incomplète. Veuillez contacter l\'administrateur.');
+      }
+
+      // Générer les paramètres du template
+      const templateParams = CONTACT_EMAIL_TEMPLATE.getTemplateParams({
+        name: formData.name,
+        email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+      });
+
+      // Envoyer l'email via EmailJS
+      await emailjs.send(
+        EMAILJS_CONFIG.SERVICE_ID,
+        EMAILJS_CONFIG.TEMPLATE_ID,
+        templateParams,
+        EMAILJS_CONFIG.PUBLIC_KEY
+      );
       
       setSubmitStatus("success");
+      
+      // Réinitialiser le formulaire
+      setFormData({ name: "", email: "", subject: "", message: "" });
       
       // Rediriger après 3 secondes
       setTimeout(() => {
         navigate("/");
       }, 3000);
     } catch (error) {
+      console.error('Erreur EmailJS:', error);
       setSubmitStatus("error");
       setIsSubmitting(false);
     }
@@ -200,7 +206,7 @@ function Contact() {
               {submitStatus === "success" && (
                 <div className="p-4 bg-green-600/20 border border-green-500/50 rounded-lg text-green-400 flex items-center gap-2">
                   <span className="text-lg">✓</span>
-                  <span>Message préparé ! Votre client email devrait s'ouvrir. Vous serez redirigé vers l'accueil dans quelques secondes...</span>
+                  <span>Message envoyé avec succès ! Vous serez redirigé vers l'accueil dans quelques secondes...</span>
                 </div>
               )}
 
