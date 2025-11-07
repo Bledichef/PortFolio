@@ -82,9 +82,12 @@ function ContactModal({ isOpen, onClose }) {
         />
         
         {/* Modal Container - Toujours centré dans la viewport */}
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 pointer-events-none">
+        <div 
+          className="fixed inset-0 z-50 flex items-start justify-center p-4 pointer-events-none overflow-y-auto"
+          style={{ paddingTop: '2rem', paddingBottom: '2rem' }}
+        >
           <motion.div
-            className="bg-slate-800 rounded-xl p-6 w-full max-w-lg border border-slate-700 shadow-2xl pointer-events-auto"
+            className="bg-slate-800 rounded-xl p-6 w-full max-w-lg my-auto max-h-[calc(100vh-4rem)] overflow-y-auto border border-slate-700 shadow-2xl pointer-events-auto"
             initial={{ opacity: 0, scale: 0.9 }}
             exit={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
