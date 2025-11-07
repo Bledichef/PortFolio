@@ -87,20 +87,14 @@ function ContactModal({ isOpen, onClose }) {
             onClick={onClose}
           />
           
-          {/* Modal */}
-          <motion.div
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 overflow-y-auto"
-            initial={{ opacity: 0 }}
-            exit={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            onClick={onClose}
-          >
+          {/* Modal Container - Centré verticalement et horizontalement */}
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 pointer-events-none">
             <motion.div
-              className="bg-slate-800 rounded-xl p-6 max-w-2xl w-full my-4 max-h-[96vh] overflow-y-auto border border-slate-700 shadow-2xl"
-              initial={{ scale: 0.9, y: 20 }}
-              exit={{ scale: 0.9, y: 20 }}
-              animate={{ scale: 1, y: 0 }}
-              onClick={(e) => e.stopPropagation()}
+              className="bg-slate-800 rounded-xl p-6 max-w-2xl w-full max-h-[90vh] overflow-y-auto border border-slate-700 shadow-2xl pointer-events-auto"
+              initial={{ opacity: 0, scale: 0.95 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.2 }}
             >
               {/* Header */}
               <div className="flex justify-between items-center mb-4">
@@ -238,7 +232,7 @@ function ContactModal({ isOpen, onClose }) {
                 </div>
               </form>
             </motion.div>
-          </motion.div>
+          </div>
         </>
       )}
     </AnimatePresence>
