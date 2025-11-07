@@ -81,27 +81,25 @@ function ContactModal({ isOpen, onClose }) {
           onClick={onClose}
         />
         
-        {/* Modal Container - Toujours centré dans la viewport */}
-        <div 
-          className="fixed inset-0 z-50 flex items-start justify-center p-4 pointer-events-none overflow-y-auto"
-          style={{ paddingTop: '2rem', paddingBottom: '2rem' }}
-        >
+        {/* Modal Container - Toujours centré et entièrement visible */}
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 pointer-events-none">
           <motion.div
-            className="bg-slate-800 rounded-xl p-6 w-full max-w-lg my-auto max-h-[calc(100vh-4rem)] overflow-y-auto border border-slate-700 shadow-2xl pointer-events-auto"
-            initial={{ opacity: 0, scale: 0.9 }}
-            exit={{ opacity: 0, scale: 0.9 }}
+            className="bg-slate-800 rounded-2xl p-6 w-full max-w-lg border border-slate-700/50 shadow-2xl pointer-events-auto backdrop-blur-sm"
+            style={{ maxHeight: 'calc(100vh - 2rem)' }}
+            initial={{ opacity: 0, scale: 0.95 }}
+            exit={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.2 }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
             onClick={(e) => e.stopPropagation()}
           >
           {/* Header */}
-          <div className="flex justify-between items-center mb-4">
-            <h2 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-blue-400">
+          <div className="flex justify-between items-center mb-4 pb-3 border-b border-slate-700/50">
+            <h2 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-blue-400 to-emerald-400">
               Contactez-moi
             </h2>
             <button
               onClick={onClose}
-              className="text-slate-400 hover:text-white text-2xl font-bold transition-colors"
+              className="text-slate-400 hover:text-white text-2xl font-light transition-all hover:rotate-90 w-7 h-7 flex items-center justify-center rounded-full hover:bg-slate-700"
               aria-label="Fermer"
             >
               ×
@@ -109,12 +107,12 @@ function ContactModal({ isOpen, onClose }) {
           </div>
 
           {/* Options de contact */}
-          <div className="mb-4 p-3 bg-slate-700 rounded-lg">
-            <p className="text-slate-300 mb-2 text-sm">Ou contactez-moi directement :</p>
+          <div className="mb-4 p-3 bg-gradient-to-br from-slate-700/50 to-slate-800/50 rounded-xl border border-slate-600/30">
+            <p className="text-slate-300 mb-2 text-xs font-medium">Ou contactez-moi directement :</p>
             <div className="flex flex-wrap gap-2">
               <button
                 onClick={copyEmail}
-                className="px-3 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors text-sm"
+                className="px-3 py-1.5 bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition-all text-xs font-medium shadow-lg hover:shadow-blue-500/50 hover:scale-105"
               >
                 {submitStatus === "copied" ? "✓ Copié !" : "📋 Email"}
               </button>
@@ -122,13 +120,13 @@ function ContactModal({ isOpen, onClose }) {
                 href="https://wa.me/33666742480?text=Bonjour Guillaume, j'aimerais discuter de mon projet"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-3 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-colors text-sm"
+                className="px-3 py-1.5 bg-green-600 hover:bg-green-500 text-white rounded-lg transition-all text-xs font-medium shadow-lg hover:shadow-green-500/50 hover:scale-105"
               >
                 💬 WhatsApp
               </a>
               <a
                 href="tel:+33666742480"
-                className="px-3 py-2 bg-orange-600 hover:bg-orange-700 text-white rounded-lg transition-colors text-sm"
+                className="px-3 py-1.5 bg-orange-600 hover:bg-orange-500 text-white rounded-lg transition-all text-xs font-medium shadow-lg hover:shadow-orange-500/50 hover:scale-105"
               >
                 📞 Appeler
               </a>
@@ -138,7 +136,7 @@ function ContactModal({ isOpen, onClose }) {
           {/* Formulaire */}
           <form onSubmit={handleSubmit} className="space-y-3">
             <div>
-              <label htmlFor="name" className="block text-slate-300 mb-1 text-sm">
+              <label htmlFor="name" className="block text-slate-200 mb-1.5 text-xs font-medium">
                 Nom *
               </label>
               <input
@@ -148,13 +146,13 @@ function ContactModal({ isOpen, onClose }) {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full px-3 py-2 bg-slate-700 text-white rounded-lg border border-slate-600 focus:border-orange-400 focus:outline-none text-sm"
+                className="w-full px-3 py-2 bg-slate-700/50 text-white rounded-lg border border-slate-600/50 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 focus:outline-none transition-all text-sm"
                 placeholder="Votre nom"
               />
             </div>
 
             <div>
-              <label htmlFor="email" className="block text-slate-300 mb-1 text-sm">
+              <label htmlFor="email" className="block text-slate-200 mb-1.5 text-xs font-medium">
                 Email *
               </label>
               <input
@@ -164,13 +162,13 @@ function ContactModal({ isOpen, onClose }) {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full px-3 py-2 bg-slate-700 text-white rounded-lg border border-slate-600 focus:border-orange-400 focus:outline-none text-sm"
+                className="w-full px-3 py-2 bg-slate-700/50 text-white rounded-lg border border-slate-600/50 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 focus:outline-none transition-all text-sm"
                 placeholder="votre@email.com"
               />
             </div>
 
             <div>
-              <label htmlFor="subject" className="block text-slate-300 mb-1 text-sm">
+              <label htmlFor="subject" className="block text-slate-200 mb-1.5 text-xs font-medium">
                 Sujet
               </label>
               <input
@@ -179,13 +177,13 @@ function ContactModal({ isOpen, onClose }) {
                 name="subject"
                 value={formData.subject}
                 onChange={handleChange}
-                className="w-full px-3 py-2 bg-slate-700 text-white rounded-lg border border-slate-600 focus:border-orange-400 focus:outline-none text-sm"
+                className="w-full px-3 py-2 bg-slate-700/50 text-white rounded-lg border border-slate-600/50 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 focus:outline-none transition-all text-sm"
                 placeholder="Sujet de votre message"
               />
             </div>
 
             <div>
-              <label htmlFor="message" className="block text-slate-300 mb-1 text-sm">
+              <label htmlFor="message" className="block text-slate-200 mb-1.5 text-xs font-medium">
                 Message *
               </label>
               <textarea
@@ -194,36 +192,38 @@ function ContactModal({ isOpen, onClose }) {
                 value={formData.message}
                 onChange={handleChange}
                 required
-                rows="4"
-                className="w-full px-3 py-2 bg-slate-700 text-white rounded-lg border border-slate-600 focus:border-orange-400 focus:outline-none resize-none text-sm"
+                rows="3"
+                className="w-full px-3 py-2 bg-slate-700/50 text-white rounded-lg border border-slate-600/50 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 focus:outline-none resize-none transition-all text-sm"
                 placeholder="Décrivez votre projet ou votre demande..."
               />
             </div>
 
             {submitStatus === "success" && (
-              <div className="p-3 bg-green-600/20 border border-green-500 rounded-lg text-green-400 text-sm">
-                ✓ Message envoyé ! Votre client email devrait s'ouvrir.
+              <div className="p-2.5 bg-green-600/20 border border-green-500/50 rounded-lg text-green-400 text-xs flex items-center gap-2">
+                <span>✓</span>
+                <span>Message envoyé ! Votre client email devrait s'ouvrir.</span>
               </div>
             )}
 
             {submitStatus === "error" && (
-              <div className="p-3 bg-red-600/20 border border-red-500 rounded-lg text-red-400 text-sm">
-                ✗ Erreur lors de l'envoi. Veuillez réessayer.
+              <div className="p-2.5 bg-red-600/20 border border-red-500/50 rounded-lg text-red-400 text-xs flex items-center gap-2">
+                <span>✗</span>
+                <span>Erreur lors de l'envoi. Veuillez réessayer.</span>
               </div>
             )}
 
-            <div className="flex gap-3 pt-2">
+            <div className="flex gap-2 pt-2">
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="flex-1 px-4 py-2 bg-orange-600 hover:bg-orange-700 text-white rounded-lg font-semibold transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-sm"
+                className="flex-1 px-4 py-2 bg-gradient-to-r from-orange-600 to-orange-500 hover:from-orange-500 hover:to-orange-400 text-white rounded-lg font-semibold transition-all shadow-lg hover:shadow-orange-500/50 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 text-sm"
               >
                 {isSubmitting ? "Envoi..." : "📧 Envoyer"}
               </button>
               <button
                 type="button"
                 onClick={onClose}
-                className="px-4 py-2 bg-slate-700 hover:bg-slate-600 text-white rounded-lg font-semibold transition-colors text-sm"
+                className="px-4 py-2 bg-slate-700/50 hover:bg-slate-600/50 text-white rounded-lg font-semibold transition-all border border-slate-600/50 hover:border-slate-500 text-sm"
               >
                 Annuler
               </button>
