@@ -13,6 +13,8 @@ function ContactModal({ isOpen, onClose }) {
 
   useEffect(() => {
     if (isOpen) {
+      // Remonter en haut de la page et bloquer le scroll
+      window.scrollTo({ top: 0, behavior: 'smooth' });
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'unset';
@@ -81,14 +83,14 @@ function ContactModal({ isOpen, onClose }) {
           onClick={onClose}
         />
         
-        {/* Modal Container - Toujours centré et entièrement visible */}
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 pointer-events-none">
+        {/* Modal Container - Toujours en haut de la page */}
+        <div className="fixed inset-0 z-50 flex items-start justify-center p-4 pt-8 pointer-events-none">
           <motion.div
             className="bg-slate-800 rounded-2xl p-6 w-full max-w-lg border border-slate-700/50 shadow-2xl pointer-events-auto backdrop-blur-sm"
-            style={{ maxHeight: 'calc(100vh - 2rem)' }}
-            initial={{ opacity: 0, scale: 0.95 }}
-            exit={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
+            style={{ maxHeight: 'calc(100vh - 4rem)' }}
+            initial={{ opacity: 0, scale: 0.95, y: -20 }}
+            exit={{ opacity: 0, scale: 0.95, y: -20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
             onClick={(e) => e.stopPropagation()}
           >
