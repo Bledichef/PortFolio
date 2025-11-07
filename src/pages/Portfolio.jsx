@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import ContactButton from "../components/ContactButton";
 
 // Images des projets via services de capture d'écran en ligne
 
@@ -111,14 +112,7 @@ function Portfolio() {
             >
               📋 Voir mes services
             </motion.a>
-            <motion.a
-              href="mailto:colinguillaume641@yahoo.fr"
-              className="px-8 py-4 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition duration-300 font-semibold"
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              💬 Discutons de votre projet
-            </motion.a>
+            <ContactButton variant="orange">💬 Discutons de votre projet</ContactButton>
           </motion.div>
         </motion.div>
 
@@ -218,14 +212,7 @@ function Portfolio() {
             Chaque projet est unique. Contactez-moi pour discuter de vos besoins spécifiques et obtenir un devis personnalisé.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <motion.a
-              href="mailto:colinguillaume641@yahoo.fr"
-              className="px-8 py-4 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition duration-300 font-semibold"
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              📧 Demander un devis
-            </motion.a>
+            <ContactButton variant="orange">📧 Demander un devis</ContactButton>
             <motion.a
               href="https://wa.me/33666742480?text=Bonjour, j'ai vu vos créations et je souhaite discuter de mon projet"
               target="_blank"

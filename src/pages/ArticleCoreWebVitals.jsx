@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet";
 import Breadcrumb from "../components/Breadcrumb";
+import ContactButton from "../components/ContactButton";
 
 function ArticleCoreWebVitals() {
   return (
@@ -454,14 +455,7 @@ body {
                 Je vous aide à améliorer vos Core Web Vitals et à booster votre classement Google avec un audit complet et des optimisations sur mesure.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <motion.a
-                  href="mailto:colinguillaume641@yahoo.fr?subject=Audit Core Web Vitals"
-                  className="px-8 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300 font-semibold"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  📧 Audit performance gratuit
-                </motion.a>
+                <ContactButton variant="default">📧 Audit performance gratuit</ContactButton>
                 <motion.a
                   href="https://wa.me/33666742480?text=Bonjour, j'aimerais optimiser les Core Web Vitals de mon site"
                   target="_blank"

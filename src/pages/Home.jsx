@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet";
+import ContactButton from "../components/ContactButton";
 
 function Home() {
   // Utilisation d'un state pour forcer un re-render
@@ -153,14 +154,7 @@ function Home() {
             Contactez-moi dès aujourd'hui pour discuter de votre projet et obtenir un devis personnalisé.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <motion.a
-              href="mailto:colinguillaume641@yahoo.fr"
-              className="px-8 py-4 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition duration-300 font-semibold"
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              📧 Me contacter
-            </motion.a>
+            <ContactButton variant="orange" />
             <motion.a
               href="https://wa.me/33666742480?text=Bonjour, je suis intéressé par vos services de développement web"
               target="_blank"

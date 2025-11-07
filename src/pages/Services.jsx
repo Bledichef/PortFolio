@@ -3,6 +3,7 @@ import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faComments, faFileAlt, faHandshake, faRocket, faCog, faCheckCircle } from '@fortawesome/free-solid-svg-icons';
+import ContactButton from "../components/ContactButton";
 
 function Services() {
   const controls = useAnimation();
@@ -138,14 +139,7 @@ function Services() {
           <p className="text-lg text-slate-300 mb-6 max-w-2xl mx-auto">
             Le processus est simple et transparent. Contactez-moi pour une consultation gratuite et découvrez comment transformer votre idée en réalité.
           </p>
-          <motion.a
-            href="mailto:colinguillaume641@yahoo.fr"
-            className="inline-block px-8 py-4 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition duration-300 font-semibold"
-            whileHover={{ scale: 1.05, y: -2 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            🚀 Consultation gratuite
-          </motion.a>
+          <ContactButton variant="orange">🚀 Consultation gratuite</ContactButton>
         </motion.div>
 
         {/* Section Solutions d'automatisation */}
@@ -263,12 +257,7 @@ function Services() {
             Contactez-moi pour une consultation gratuite et découvrez comment je peux transformer vos idées en réalité digitale.
           </p>
           <div className="flex flex-col md:flex-row gap-4 justify-center">
-            <a
-              href="mailto:colinguillaume641@yahoo.fr"
-              className="px-8 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300 font-semibold"
-            >
-              📧 Envoyer un email
-            </a>
+            <ContactButton variant="default">📧 Envoyer un email</ContactButton>
             <a
               href="https://wa.me/33666742480?text=Bonjour, je souhaite une consultation gratuite pour mon projet"
               target="_blank"

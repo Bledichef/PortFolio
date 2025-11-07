@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet";
+import ContactButton from "../components/ContactButton";
 
 function FAQ() {
   const [openIndex, setOpenIndex] = useState(null);
@@ -94,14 +95,7 @@ function FAQ() {
               Vous avez d'autres questions ? N'hésitez pas à me contacter !
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <motion.a
-                href="mailto:colinguillaume641@yahoo.fr"
-                className="px-8 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300 font-semibold"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                📧 Me contacter
-              </motion.a>
+              <ContactButton variant="default" />
               <motion.a
                 href="https://wa.me/33666742480?text=Bonjour, j'ai une question sur vos services"
                 target="_blank"

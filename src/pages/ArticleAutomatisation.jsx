@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet";
 import Breadcrumb from "../components/Breadcrumb";
+import ContactButton from "../components/ContactButton";
 
 function ArticleAutomatisation() {
   return (
@@ -240,14 +241,7 @@ function ArticleAutomatisation() {
                 Je vous aide à identifier les opportunités d'automatisation et à créer les outils sur mesure qui transformeront votre efficacité.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <motion.a
-                  href="mailto:colinguillaume641@yahoo.fr"
-                  className="px-8 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300 font-semibold"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  📧 Audit gratuit
-                </motion.a>
+                <ContactButton variant="default">📧 Audit gratuit</ContactButton>
                 <motion.a
                   href="https://wa.me/33666742480?text=Bonjour, j'ai lu votre article sur l'automatisation et j'aimerais automatiser mes processus"
                   target="_blank"
