@@ -96,14 +96,14 @@ function ContactModal({ isOpen, onClose }) {
             onClick={onClose}
           >
             <motion.div
-              className="bg-slate-800 rounded-xl p-8 max-w-2xl w-full my-8 border border-slate-700 shadow-2xl"
+              className="bg-slate-800 rounded-xl p-6 max-w-2xl w-full my-4 max-h-[96vh] overflow-y-auto border border-slate-700 shadow-2xl"
               initial={{ scale: 0.9, y: 20 }}
               exit={{ scale: 0.9, y: 20 }}
               animate={{ scale: 1, y: 0 }}
               onClick={(e) => e.stopPropagation()}
             >
               {/* Header */}
-              <div className="flex justify-between items-center mb-6">
+              <div className="flex justify-between items-center mb-4">
                 <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-blue-400">
                   Contactez-moi
                 </h2>
@@ -117,7 +117,7 @@ function ContactModal({ isOpen, onClose }) {
               </div>
 
               {/* Options de contact */}
-              <div className="mb-6 p-4 bg-slate-700 rounded-lg">
+              <div className="mb-4 p-3 bg-slate-700 rounded-lg">
                 <p className="text-slate-300 mb-3">Ou contactez-moi directement :</p>
                 <div className="flex flex-wrap gap-3">
                   <button
@@ -144,7 +144,7 @@ function ContactModal({ isOpen, onClose }) {
               </div>
 
               {/* Formulaire */}
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <form onSubmit={handleSubmit} className="space-y-3">
                 <div>
                   <label htmlFor="name" className="block text-slate-300 mb-2">
                     Nom *
@@ -202,7 +202,7 @@ function ContactModal({ isOpen, onClose }) {
                     value={formData.message}
                     onChange={handleChange}
                     required
-                    rows="6"
+                    rows="5"
                     className="w-full px-4 py-2 bg-slate-700 text-white rounded-lg border border-slate-600 focus:border-orange-400 focus:outline-none resize-none"
                     placeholder="Décrivez votre projet ou votre demande..."
                   />
