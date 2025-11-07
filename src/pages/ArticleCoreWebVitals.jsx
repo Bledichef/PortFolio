@@ -464,6 +464,8 @@ body {
                 </motion.a>
                 <motion.a
                   href="https://wa.me/33666742480?text=Bonjour, j'aimerais optimiser les Core Web Vitals de mon site"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="px-8 py-4 bg-green-600 text-white rounded-lg hover:bg-green-700 transition duration-300 font-semibold"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}

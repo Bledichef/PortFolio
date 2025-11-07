@@ -315,6 +315,8 @@ const generateSitemap = () => {
                 </motion.a>
                 <motion.a
                   href="https://wa.me/33666742480?text=Bonjour, j'ai lu votre article sur le SEO React et j'aimerais optimiser mon site"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="px-8 py-4 bg-green-600 text-white rounded-lg hover:bg-green-700 transition duration-300 font-semibold"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
