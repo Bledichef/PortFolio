@@ -67,21 +67,59 @@ function ContactModal({ isOpen, onClose }) {
     }
   };
 
-  if (!isOpen) return null;
+  useEffect(() => {
+    if (isOpen) {
+      console.log('Modal should be open');
+    }
+  }, [isOpen]);
+
+  if (!isOpen) {
+    console.log('Modal is closed');
+    return null;
+  }
 
   return (
-    <div className="fixed inset-0 z-[9999]">
+    <>
       {/* Overlay */}
       <div 
-        className="absolute inset-0 bg-black bg-opacity-50"
+        className="fixed bg-black bg-opacity-50"
         onClick={onClose}
+        style={{ 
+          position: 'fixed',
+          top: 0, 
+          left: 0, 
+          right: 0, 
+          bottom: 0,
+          zIndex: 9999,
+          width: '100%',
+          height: '100%'
+        }}
       />
       
       {/* Modal */}
-      <div className="absolute inset-0 flex items-start justify-center p-4 pt-8 overflow-y-auto">
+      <div 
+        className="fixed flex items-start justify-center p-4 pt-8"
+        style={{ 
+          position: 'fixed',
+          top: 0, 
+          left: 0, 
+          right: 0, 
+          bottom: 0,
+          zIndex: 10000,
+          pointerEvents: 'none',
+          width: '100%',
+          height: '100%'
+        }}
+      >
         <div 
-          className="bg-slate-800 rounded-2xl p-6 w-full max-w-lg border border-slate-700/50 shadow-2xl relative"
-          style={{ maxHeight: 'calc(100vh - 4rem)' }}
+          className="bg-slate-800 rounded-2xl p-6 w-full max-w-lg border border-slate-700/50 shadow-2xl"
+          style={{ 
+            maxHeight: 'calc(100vh - 4rem)',
+            pointerEvents: 'auto',
+            backgroundColor: '#1e293b',
+            position: 'relative',
+            zIndex: 10001
+          }}
           onClick={(e) => e.stopPropagation()}
         >
           {/* Header */}
@@ -223,7 +261,7 @@ function ContactModal({ isOpen, onClose }) {
           </form>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
