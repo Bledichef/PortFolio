@@ -12,17 +12,22 @@ function ContactModal({ isOpen, onClose }) {
 
   useEffect(() => {
     if (isOpen) {
-      // Bloquer le scroll d'abord
-      const originalOverflow = document.body.style.overflow;
-      document.body.style.overflow = 'hidden';
+      // Sauvegarder la position de scroll
+      const scrollY = window.scrollY;
       
-      // Remonter en haut après un court délai
-      requestAnimationFrame(() => {
-        window.scrollTo(0, 0);
-      });
+      // Bloquer le scroll
+      document.body.style.overflow = 'hidden';
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.width = '100%';
       
       return () => {
-        document.body.style.overflow = originalOverflow;
+        // Restaurer la position de scroll
+        document.body.style.overflow = '';
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.width = '';
+        window.scrollTo(0, scrollY);
       };
     }
   }, [isOpen]);
@@ -72,14 +77,7 @@ function ContactModal({ isOpen, onClose }) {
     }
   };
 
-  useEffect(() => {
-    if (isOpen) {
-      console.log('Modal should be open');
-    }
-  }, [isOpen]);
-
   if (!isOpen) {
-    console.log('Modal is closed');
     return null;
   }
 
