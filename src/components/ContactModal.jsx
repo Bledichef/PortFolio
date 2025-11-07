@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 function ContactModal({ isOpen, onClose }) {
@@ -10,6 +10,18 @@ function ContactModal({ isOpen, onClose }) {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null); // 'success', 'error', null
+
+  // Empêcher le scroll du body quand la modale est ouverte
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isOpen]);
 
   const handleChange = (e) => {
     setFormData({
@@ -77,14 +89,14 @@ function ContactModal({ isOpen, onClose }) {
           
           {/* Modal */}
           <motion.div
-            className="fixed inset-0 z-50 flex items-center justify-center p-4"
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 overflow-y-auto"
             initial={{ opacity: 0 }}
             exit={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             onClick={onClose}
           >
             <motion.div
-              className="bg-slate-800 rounded-xl p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto border border-slate-700 shadow-2xl"
+              className="bg-slate-800 rounded-xl p-8 max-w-2xl w-full my-8 border border-slate-700 shadow-2xl"
               initial={{ scale: 0.9, y: 20 }}
               exit={{ scale: 0.9, y: 20 }}
               animate={{ scale: 1, y: 0 }}
