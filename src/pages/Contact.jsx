@@ -10,7 +10,8 @@ function Contact() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    subject: "",
+    projectType: "",
+    budget: "",
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -38,7 +39,7 @@ function Contact() {
       const templateParams = CONTACT_EMAIL_TEMPLATE.getTemplateParams({
         name: formData.name,
         email: formData.email,
-        subject: formData.subject,
+        subject: `[${formData.projectType || "Général"}] ${formData.budget ? `Budget: ${formData.budget}` : ""}`,
         message: formData.message,
       });
 
@@ -53,7 +54,7 @@ function Contact() {
       setSubmitStatus("success");
       
       // Réinitialiser le formulaire
-      setFormData({ name: "", email: "", subject: "", message: "" });
+      setFormData({ name: "", email: "", projectType: "", budget: "", message: "" });
       
       // Rediriger après 3 secondes
       setTimeout(() => {
@@ -68,7 +69,7 @@ function Contact() {
 
   const copyEmail = async () => {
     try {
-      await navigator.clipboard.writeText("colinguillaume641@yahoo.fr");
+      await navigator.clipboard.writeText("contact@guillaume-colin.com");
       setSubmitStatus("copied");
       setTimeout(() => setSubmitStatus(null), 2000);
     } catch (error) {
@@ -173,18 +174,45 @@ function Contact() {
               </div>
 
               <div>
-                <label htmlFor="subject" className="block text-slate-200 mb-2 font-medium">
-                  Sujet
+                <label htmlFor="projectType" className="block text-slate-200 mb-2 font-medium">
+                  Type de projet
                 </label>
-                <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  value={formData.subject}
+                <select
+                  id="projectType"
+                  name="projectType"
+                  value={formData.projectType}
                   onChange={handleChange}
                   className="w-full px-4 py-3 bg-slate-700/50 text-white rounded-lg border border-slate-600/50 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 focus:outline-none transition-all"
-                  placeholder="Sujet de votre message"
-                />
+                >
+                  <option value="">-- Sélectionnez un type --</option>
+                  <option value="Site vitrine">Site vitrine</option>
+                  <option value="E-commerce">E-commerce</option>
+                  <option value="Application web">Application web sur mesure</option>
+                  <option value="Automatisation">Automatisation / Intégration</option>
+                  <option value="Refonte">Refonte de site existant</option>
+                  <option value="Autre">Autre</option>
+                </select>
+              </div>
+
+              <div>
+                <label htmlFor="budget" className="block text-slate-200 mb-2 font-medium">
+                  Budget envisagé
+                </label>
+                <select
+                  id="budget"
+                  name="budget"
+                  value={formData.budget}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 bg-slate-700/50 text-white rounded-lg border border-slate-600/50 focus:border-orange-400 focus:ring-2 focus:ring-orange-400/20 focus:outline-none transition-all"
+                >
+                  <option value="">-- Sélectionnez un budget --</option>
+                  <option value="Moins de 500€">Moins de 500€</option>
+                  <option value="500€ – 1 500€">500€ – 1 500€</option>
+                  <option value="1 500€ – 3 000€">1 500€ – 3 000€</option>
+                  <option value="3 000€ – 5 000€">3 000€ – 5 000€</option>
+                  <option value="Plus de 5 000€">Plus de 5 000€</option>
+                  <option value="À définir">À définir ensemble</option>
+                </select>
               </div>
 
               <div>

@@ -48,27 +48,42 @@ function Portfolio() {
   };
 
   const projects = [
-    { 
-        title: "Cv Analyzer", 
-        description: "Cv Analyzer est une application innovante qui utilise l'intelligence artificielle pour analyser et améliorer les CV. En quelques secondes, elle génère des recommandations personnalisées pour augmenter les chances de succès des candidats.", 
+    {
+        title: "CV Analyzer",
+        description: "Application SaaS qui utilise l'IA pour analyser et améliorer les CV. En quelques secondes, elle génère des recommandations personnalisées pour augmenter les chances de succès des candidats. Système de crédits avec paiement intégré.",
         imgSrc: "https://image.thum.io/get/width/1200/https://www.cv-analyse.fr",
         url: "https://www.cv-analyse.fr",
-        tags: ["Chatbot IA", "IA intégrée", "Paiements crédit"]
+        tags: ["SaaS", "IA intégrée", "Paiements crédit"]
     },
     {
         title: "Le Village",
-        description: "Le Village est un site vitrine conçu pour le restaurant Le Village, situé à Guyancourt. Ce site présente le menu, les événements spéciaux, et permet aux clients de découvrir l'atmosphère chaleureuse du restaurant.",
+        description: "Site vitrine pour le restaurant Le Village (Guyancourt). Présentation du menu, des événements spéciaux et de l'atmosphère du lieu. Design chaleureux optimisé pour capter des réservations locales.",
         imgSrc: "https://image.thum.io/get/width/1200/https://le-village-bay.vercel.app/",
         url: "https://le-village-bay.vercel.app/",
-        tags: ["Géolocalisation", "Galerie photos", "Design moderne"]
-      },
-      
-    { 
-        title: "OKRDV", 
-        description: "OKRDV est un outil de gestion de planning professionnel qui permet aux professionnels de créer et générer une page en ligne pour la prise de réservation et la gestion de planning. Une fois qu'un client prend un rendez-vous, le professionnel peut l'accepter ou le refuser. Une fois validé, un email automatique est envoyé avec un fichier ICS pour intégrer le RDV dans tous les gestionnaires de planning.", 
-        imgSrc: "https://mini.s-shot.ru/1200x800/PNG/1200/Z100/?https://www.okrdv.eu", 
+        tags: ["Site vitrine", "Galerie photos", "SEO local"]
+    },
+    {
+        title: "OKRDV",
+        description: "Outil SaaS de gestion de planning pour les professionnels. Chaque professionnel dispose d'une page de prise de RDV personnalisée. Acceptation / refus des créneaux, envoi automatique d'un fichier ICS et synchronisation avec les gestionnaires de planning.",
+        imgSrc: "https://mini.s-shot.ru/1200x800/PNG/1200/Z100/?https://www.okrdv.eu",
         url: "https://www.okrdv.eu/",
-        tags: ["Pages personnalisables", "Ajout automatique RDV", "Gestion planning"]
+        tags: ["SaaS", "Prise de RDV", "Email automatique"]
+    },
+    {
+        title: "Portfolio GC Consulting",
+        description: "Ce site portfolio — conçu et développé entièrement sur mesure avec React, Tailwind CSS et Framer Motion. Animations fluides, blog SEO, formulaire de contact EmailJS, responsive mobile-first. Un exemple concret de ce que je peux livrer.",
+        imgSrc: "https://image.thum.io/get/width/1200/https://gc-consulting.fr",
+        url: "/",
+        tags: ["React", "Tailwind CSS", "Framer Motion"],
+        internal: true
+    },
+    {
+        title: "Projet e-commerce",
+        description: "Boutique en ligne complète avec catalogue produits, panier, paiement Stripe et espace client. Interface d'administration pour gérer les stocks et les commandes. Projet en cours de développement — démo disponible sur demande.",
+        imgSrc: "https://placehold.co/1200x800/1e293b/94a3b8?text=E-commerce+%E2%80%94+En+cours",
+        url: null,
+        tags: ["E-commerce", "Stripe", "Admin"],
+        inProgress: true
     },
   ];
 
@@ -133,27 +148,42 @@ function Portfolio() {
           >
             {/* Image avec overlay */}
             <div className="relative overflow-hidden">
-                       <motion.img
-                         src={project.imgSrc}
-                         alt={`Capture d'écran du projet ${project.title} - ${project.description.substring(0, 100)}...`}
-                         className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+              <motion.img
+                src={project.imgSrc}
+                alt={`Capture d'écran du projet ${project.title} - ${project.description.substring(0, 100)}...`}
+                className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.7, ease: "easeInOut" }}
               />
+              {/* Badge "En cours" */}
+              {project.inProgress && (
+                <span className="absolute top-3 right-3 bg-amber-500/90 text-white text-xs font-semibold px-3 py-1 rounded-full">
+                  En cours
+                </span>
+              )}
               {/* Overlay au survol */}
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              {/* Bouton overlay */}
-              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <a 
-                  href={project.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-6 py-3 bg-orange-600 text-white rounded-lg font-semibold hover:bg-orange-700 transition-colors duration-200 shadow-lg"
-                >
-                  Voir le site
-                </a>
-              </div>
+              {!project.inProgress && (
+                <>
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    {project.internal ? (
+                      <span className="px-6 py-3 bg-orange-600 text-white rounded-lg font-semibold shadow-lg">
+                        Ce site !
+                      </span>
+                    ) : (
+                      <a
+                        href={project.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-6 py-3 bg-orange-600 text-white rounded-lg font-semibold hover:bg-orange-700 transition-colors duration-200 shadow-lg"
+                      >
+                        Voir le site
+                      </a>
+                    )}
+                  </div>
+                </>
+              )}
             </div>
             
             {/* Contenu de la carte */}
@@ -182,17 +212,27 @@ function Portfolio() {
               </div>
               
               {/* Lien discret */}
-              <a 
-                href={project.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center text-blue-400 hover:text-orange-400 transition-colors duration-200 text-sm font-medium"
-              >
-                <span>Visiter le site</span>
-                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                </svg>
-              </a>
+              {project.inProgress ? (
+                <span className="inline-flex items-center text-amber-400 text-sm font-medium">
+                  <span>Démo disponible sur demande</span>
+                </span>
+              ) : project.internal ? (
+                <span className="inline-flex items-center text-orange-400 text-sm font-medium">
+                  <span>Vous êtes dessus !</span>
+                </span>
+              ) : (
+                <a
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-blue-400 hover:text-orange-400 transition-colors duration-200 text-sm font-medium"
+                >
+                  <span>Visiter le site</span>
+                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </a>
+              )}
             </div>
           </motion.div>
         ))}

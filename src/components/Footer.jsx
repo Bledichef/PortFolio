@@ -7,7 +7,7 @@ function Footer() {
         {/* Coordonnées de contact */}
         <div>
           <h3 className="text-lg font-semibold">Contactez-moi :</h3>
-          <p>Email : <a href="mailto:colinguillaume641@yahoo.fr" className="text-blue-400 hover:text-blue-300">colinguillaume641@yahoo.fr</a></p>
+          <p>Email : <a href="mailto:contact@guillaume-colin.com" className="text-blue-400 hover:text-blue-300">contact@guillaume-colin.com</a></p>
           <p>Téléphone : <a href="tel:+33666742480" className="text-blue-400 hover:text-blue-300">+33 6 66 74 24 80</a></p>
         </div>
 
