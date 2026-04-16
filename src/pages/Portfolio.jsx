@@ -72,19 +72,19 @@ function Portfolio() {
     {
         title: "Portfolio GC Consulting",
         description: "Ce site portfolio — conçu et développé entièrement sur mesure avec React, Tailwind CSS et Framer Motion. Animations fluides, blog SEO, formulaire de contact EmailJS, responsive mobile-first. Un exemple concret de ce que je peux livrer.",
-        imgSrc: "https://image.thum.io/get/width/1200/https://gc-consulting.fr",
+        imgSrc: "https://image.thum.io/get/width/1200/https://guillaume-colin.com/portfolio",
         url: "/",
         tags: ["React", "Tailwind CSS", "Framer Motion"],
         internal: true
     },
-    {
-        title: "Projet e-commerce",
-        description: "Boutique en ligne complète avec catalogue produits, panier, paiement Stripe et espace client. Interface d'administration pour gérer les stocks et les commandes. Projet en cours de développement — démo disponible sur demande.",
-        imgSrc: "https://placehold.co/1200x800/1e293b/94a3b8?text=E-commerce+%E2%80%94+En+cours",
-        url: null,
-        tags: ["E-commerce", "Stripe", "Admin"],
-        inProgress: true
-    },
+    // {
+    //     title: "Projet e-commerce",
+    //     description: "Boutique en ligne complète avec catalogue produits, panier, paiement Stripe et espace client. Interface d'administration pour gérer les stocks et les commandes. Projet en cours de développement — démo disponible sur demande.",
+    //     imgSrc: "https://placehold.co/1200x800/1e293b/94a3b8?text=E-commerce+%E2%80%94+En+cours",
+    //     url: null,
+    //     tags: ["E-commerce", "Stripe", "Admin"],
+    //     inProgress: true
+    // },
   ];
 
   return (
