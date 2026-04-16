@@ -1,16 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet";
 import ContactButton from "../components/ContactButton";
 
 function Home() {
-  // Utilisation d'un state pour forcer un re-render
-  const [key, setKey] = useState(0);
-
-  useEffect(() => {
-    setKey(prevKey => prevKey + 1);
-  }, []);
-
   return (
     <>
       <Helmet>
