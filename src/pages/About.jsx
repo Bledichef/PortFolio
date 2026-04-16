@@ -15,41 +15,41 @@ function About() {
   };
 
   const stats = [
-    { value: "3+", label: "Ans d'expérience" },
+    { value: "4+", label: "Ans d'expérience pro" },
     { value: "10+", label: "Projets livrés" },
-    { value: "100%", label: "Satisfaction client" },
+    { value: "2", label: "Alternants managés" },
     { value: "48h", label: "Délai de réponse max" },
   ];
 
   const skills = [
-    { name: "React / Next.js", level: 90 },
-    { name: "Node.js / Express", level: 85 },
-    { name: "Tailwind CSS", level: 90 },
-    { name: "MongoDB / SQL", level: 75 },
-    { name: "API & Automatisation", level: 80 },
-    { name: "Déploiement (Vercel / OVH)", level: 85 },
+    { name: "React.js / TypeScript", level: 90 },
+    { name: "Node.js / ASP.NET Core (.NET)", level: 85 },
+    { name: "FastAPI (Python)", level: 75 },
+    { name: "MongoDB / SQL", level: 80 },
+    { name: "Stripe / APIs REST", level: 85 },
+    { name: "Azure / Déploiement prod", level: 75 },
   ];
 
   const timeline = [
     {
-      year: "2021",
-      title: "Premiers pas en développement",
-      desc: "Apprentissage autodidacte de HTML, CSS et JavaScript. Création des premiers projets personnels.",
+      year: "2008 – 2020",
+      title: "Carrière en restauration",
+      desc: "Pâtissier, serveur puis chef de rang pendant 12 ans. Une école de rigueur, de service client et de management d'équipe.",
     },
     {
       year: "2022",
-      title: "Montée en compétences",
-      desc: "Formation intensive React et Node.js. Premiers projets clients (sites vitrines, landing pages).",
+      title: "Développeur Full-Stack — HA PLUS PME",
+      desc: "Reconversion réussie : développement d'applications web et mobile (React.js, React Native), APIs REST (.NET, Node.js, FastAPI), intégration Stripe & CRM Dynamics. Management technique de deux alternants.",
     },
     {
       year: "2023",
-      title: "Projets d'envergure",
-      desc: "Développement de CV Analyzer (IA + paiements) et OKRDV (gestion de planning en ligne). Lancement en production.",
+      title: "Lancement de projets SaaS perso",
+      desc: "Développement et mise en production de CV Analyzer (analyse IA + paiements) et OKRDV (gestion de RDV en ligne). Deux produits 100% conçus et déployés en autonomie.",
     },
     {
       year: "2024 – aujourd'hui",
-      title: "Freelance à plein temps",
-      desc: "Accompagnement de clients PME et entrepreneurs sur des projets web complets, de la conception au lancement.",
+      title: "Freelance en parallèle",
+      desc: "Accompagnement de clients PME et entrepreneurs sur des projets web sur mesure : sites vitrines, applications métier, e-commerce — de la conception au lancement.",
     },
   ];
 
@@ -114,17 +114,18 @@ function About() {
             <div className="text-left">
               <h2 className="text-3xl font-bold mb-2 text-white">Guillaume Colin</h2>
               <p className="text-orange-400 font-semibold mb-4 text-lg">
-                Développeur Web Freelance — React · Node.js · Automatisation
+                Développeur Full-Stack — React · Node.js · .NET · Python
               </p>
               <p className="text-slate-300 leading-relaxed mb-4">
-                Passionné par le développement web depuis plus de 3 ans, j'accompagne entrepreneurs
-                et PME dans la création de sites modernes, performants et pensés pour convertir.
-                Mon approche est simple : comprendre votre métier d'abord, coder ensuite.
+                Développeur Full-Stack depuis 2022 chez <span className="text-white font-medium">HA PLUS PME</span>,
+                je conçois et mets en production des applications web et mobiles utilisées au quotidien.
+                Intégrations Stripe, APIs REST, CRM Dynamics, management d'équipe — j'interviens sur
+                l'ensemble du cycle de développement.
               </p>
               <p className="text-slate-300 leading-relaxed">
-                Autodidacte, j'ai appris en construisant de vrais projets — de CV Analyzer (IA +
-                paiements) à OKRDV (gestion de planning en ligne). Chaque réalisation m'a permis
-                d'affiner ma méthode : livrer vite, livrer bien, et assurer le suivi sur la durée.
+                En parallèle, j'accompagne des clients en freelance et j'ai lancé mes propres SaaS :
+                CV Analyzer et OKRDV, deux produits en production. Reconverti de la restauration,
+                j'apporte un regard terrain sur ce que veulent vraiment les utilisateurs.
               </p>
             </div>
           </motion.div>
