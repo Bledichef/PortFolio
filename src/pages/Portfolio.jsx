@@ -71,7 +71,7 @@ function Portfolio() {
     },
     {
         title: "Portfolio GC Consulting",
-        description: "Ce site portfolio — conçu et développé entièrement sur mesure avec React, Tailwind CSS et Framer Motion. Animations fluides, blog SEO, formulaire de contact EmailJS, responsive mobile-first. Un exemple concret de ce que je peux livrer.",
+        description: "Ce site portfolio est conçu et développé entièrement sur mesure avec React, Tailwind CSS et Framer Motion. Animations fluides, blog SEO, formulaire de contact EmailJS, responsive mobile-first. Un exemple concret de ce que je peux livrer.",
         imgSrc: "https://image.thum.io/get/width/1200/https://guillaume-colin.com/portfolio",
         url: "/",
         tags: ["React", "Tailwind CSS", "Framer Motion"],

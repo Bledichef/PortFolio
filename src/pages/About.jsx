@@ -38,7 +38,7 @@ function About() {
     },
     {
       year: "2022",
-      title: "Développeur Full-Stack — HA PLUS PME",
+      title: "Développeur Full-Stack  HA PLUS PME",
       desc: "Reconversion réussie : développement d'applications web et mobile (React.js, React Native), APIs REST (.NET, Node.js, FastAPI), intégration Stripe & CRM Dynamics. Management technique de deux alternants.",
     },
     {
@@ -114,12 +114,12 @@ function About() {
             <div className="text-left">
               <h2 className="text-3xl font-bold mb-2 text-white">Guillaume Colin</h2>
               <p className="text-orange-400 font-semibold mb-4 text-lg">
-                Développeur Full-Stack — React · Node.js · .NET · Python
+                Développeur Full-Stack  React · Node.js · .NET · Python
               </p>
               <p className="text-slate-300 leading-relaxed mb-4">
                 Développeur Full-Stack depuis 2022 chez <span className="text-white font-medium">HA PLUS PME</span>,
                 je conçois et mets en production des applications web et mobiles utilisées au quotidien.
-                Intégrations Stripe, APIs REST, CRM Dynamics, management d'équipe — j'interviens sur
+                Intégrations Stripe, APIs REST, CRM Dynamics, management d'équipe  j'interviens sur
                 l'ensemble du cycle de développement.
               </p>
               <p className="text-slate-300 leading-relaxed">
