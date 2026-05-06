@@ -21,7 +21,7 @@ function Header() {
                 />
                 <div className="hidden sm:block">
                   <h1 className="text-xl md:text-2xl font-bold text-white group-hover:text-orange-400 transition-colors duration-300">Guillaume Colin</h1>
-                  <p className="text-sm text-slate-300 group-hover:text-slate-200 transition-colors duration-300">Développeur Web</p>
+                  <p className="text-sm text-slate-300 group-hover:text-slate-200 transition-colors duration-300">Automatisation workflows PME</p>
                 </div>
               </Link>
 

@@ -49,7 +49,7 @@ function About() {
     {
       year: "2024 – aujourd'hui",
       title: "Freelance en parallèle",
-      desc: "Accompagnement de clients PME et entrepreneurs sur des projets web sur mesure : sites vitrines, applications métier, e-commerce — de la conception au lancement.",
+      desc: "Lancement de l'activité freelance en parallèle du CDI. Automatisation de workflows et développement d'applications sur mesure pour PME, de l'audit à la livraison en production.",
     },
   ];
 
@@ -59,7 +59,7 @@ function About() {
         <title>À propos - Guillaume Colin | Développeur Web Full-Stack</title>
         <meta
           name="description"
-          content="Découvrez Guillaume Colin, développeur web freelance passionné. Spécialisé en React, Node.js, création de sites web et solutions d'automatisation. Accompagnement personnalisé de A à Z."
+          content="Développeur full-stack spécialisé dans l'automatisation des workflows manuels des PME. React, TypeScript, Node.js, Python, .NET, React Native. 3,5 ans en CDI SaaS B2B."
         />
         <meta
           name="keywords"
@@ -123,7 +123,7 @@ function About() {
                 l'ensemble du cycle de développement.
               </p>
               <p className="text-slate-300 leading-relaxed">
-                En parallèle, j'accompagne des clients en freelance et j'ai lancé mes propres SaaS :
+                En parallèle, j'accompagne des PME sur l'automatisation de leurs workflows manuels et j'ai lancé mes propres SaaS :
                 CV Analyzer et OKRDV, deux produits en production. Reconverti de la restauration,
                 j'apporte un regard terrain sur ce que veulent vraiment les utilisateurs.
               </p>
@@ -247,18 +247,18 @@ function About() {
                 {[
                   {
                     icon: "🌐",
-                    title: "Sites web sur mesure",
-                    desc: "De la conception à la mise en ligne, je crée des sites qui vous ressemblent",
+                    title: "Automatisation de process",
+                    desc: "Je remplace les tâches manuelles répétitives par des workflows logiciels qui tournent en temps réel.",
                   },
                   {
                     icon: "⚡",
-                    title: "Applications métier",
-                    desc: "Outils personnalisés pour automatiser vos processus et gagner du temps",
+                    title: "Web apps et APIs sur mesure",
+                    desc: "Applications métier, connecteurs entre vos outils, interfaces d'administration sur mesure.",
                   },
                   {
                     icon: "🔧",
-                    title: "Intégrations avancées",
-                    desc: "Paiements, IA, APIs — j'intègre tous les outils dont vous avez besoin",
+                    title: "Apps mobile React Native",
+                    desc: "Applications mobiles iOS et Android pour vos équipes terrain ou vos clients finaux.",
                   },
                 ].map((item, index) => (
                   <motion.div

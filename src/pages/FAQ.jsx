@@ -9,11 +9,11 @@ function FAQ() {
   const faqs = [
     {
       question: "Combien coûte la création d'un site web ?",
-      answer: "Les prix varient selon la complexité : sites vitrines à partir de 1 500€, e-commerce à partir de 3 000€, applications sur mesure sur devis. Je propose toujours un devis détaillé et transparent."
+      answer: "J'interviens sur deux offres principales : Audit Flux et Automatisation à 490 € HT (1 semaine), et Automatisation Workflow Métier à partir de 2 490 € HT (3 à 5 semaines). Pour les projets SaaS ou apps mobile sur mesure, je fournis un devis fixe après un premier échange."
     },
     {
       question: "Combien de temps faut-il pour créer un site ?",
-      answer: "Un site vitrine simple : 2-3 semaines. Un e-commerce : 4-6 semaines. Une application complexe : 6-12 semaines. Je respecte toujours les délais convenus."
+      answer: "L'audit flux est livré en 1 semaine. Un workflow automatisé se développe en 3 à 5 semaines. Une application SaaS ou mobile complète varie selon le périmètre. Je travaille soir et weekend et respecte les délais convenus."
     },
     {
       question: "Proposez-vous la maintenance après livraison ?",
